@@ -1,3 +1,3 @@
 # Game Store
-กลุ่ม สุดท้าย
-SW Studio Assignment
+* กลุ่มสุดท้าย
+* Software Studio - Assignment
