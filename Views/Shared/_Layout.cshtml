@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    @* Nav bar *@
+   
     <div class="nav">
         <span class="nav-brand"><i class="fas fa-gamepad"></i></span>
         <div class="nav-module">
@@ -30,9 +30,11 @@
 
     </div>
 
-    <div class="container">
+    <div class="view-container">
 
-        @RenderBody()
+        <main role="main">
+            @RenderBody()
+        </main>
 
     </div>
 
