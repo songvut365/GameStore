@@ -1,71 +1,91 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿* {
+    font-family: 'Prompt', sans-serif;
 }
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+margin:0px;
 }
+.nav {
+    width: 100%;
+    background-color: #650000;
+    height:50px;
+    margin:0px;
+}
+.nav-brand {
+    font-size:45px;
+    color:white;
+    font-size:35px;
+    margin-left:15px;
+    margin-right:25px;
+    float:left;
+}
+.nav-module-element {
+    color: white;
+    float: left;
+    text-decoration: none;
+    height:50px;
+    width:120px;
+    font-size:18px;
+    text-align:center;
+ 
+}
+
+.nav-module-element p {
+    margin-top:10px;
+}
+
+.nav-right {
+    float:right;
+    margin-right: 25px;
+}
+
+.input-search {
+border:0px;
+margin-top:10px;
+height:25px;
+}
+
+.input-search-img {
+position:relative;
+left:-30px;
+top:1px;
+}
+
+.nav-right input {
+    border: 0px;
+}
+
+.nav-module-element:hover {
+    opacity: 0.5;
+    background-color: black;
+}
+
+.cart {
+    text-decoration: none;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    margin-left:20px;
+    margin-right:25px;
+}
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #650000;
+    color: white;
+    text-align: center;
 }
+
+@media only screen and (max-width: 800px) {
+    .input-search {
+        display:none;
+    }
+    .input-search-img {
+    
+    display:none;}
+}
+.cart {
+    margin-top:15px;
+}
+ 
