@@ -2,4 +2,10 @@
   ViewData["Title"] = ViewData["Tpye"];
 }
 
-<h2>Store Type @ViewData["Type"]</h2>
+@section css {
+  <link rel="Stylesheet" href="@Href("~/css/Euro.css")">
+}
+
+<div id="type">
+  <h2>Store Type @ViewData["Type"]</h2>
+</div>

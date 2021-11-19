@@ -2,4 +2,10 @@
   ViewData["Title"] = "Edit Stock";
 }
 
-<h2>Edit Stock ID: @ViewData["Id"]</h2>
+@section css {
+  <link rel="Stylesheet" href="@Href("~/css/Jame.css")">
+}
+
+<div id="edit">
+  <h2>Edit Stock ID: @ViewData["Id"]</h2>
+</div>
