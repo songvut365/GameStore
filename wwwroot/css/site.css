@@ -4,13 +4,21 @@
 
 body {
     margin: 0px;
-    width:100%;
-    background-color: #0F0F0F;
+    width: 100%;
+    background: #134E5E; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #71B280, #134E5E); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.shadowBox {
+    box-shadow: 1px 6px 9px -4px rgba(0,0,0,0.66);
+    -webkit-box-shadow: 1px 6px 9px -4px rgba(0,0,0,0.66);
+    -moz-box-shadow: 1px 6px 9px -4px rgba(0,0,0,0.66);
 }
 
 .nav {
     width: 100%;
-    background-color: #650000;
+    background-color: #202020;
     height: 50px;
     margin: 0px;
 }
@@ -73,13 +81,15 @@ body {
 }
 
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #650000;
+    height: 42px;
+    background-color: #202020;
     color: white;
     text-align: center;
+    padding-top: 1px;
+    padding-bottom: 12px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -161,7 +171,7 @@ img {
     width: 250px;
     top: -320px;
     height: 365px;
-    background-color: #353535;
+    background-color: #202020;
     z-index: -1;
     border-radius: 4%;
 }
@@ -204,7 +214,7 @@ img {
 
 
 .view-container {
-    margin: 35px 35px 250px 35px;
+    margin: 35px 35px 150px 35px;
 }
 
  
