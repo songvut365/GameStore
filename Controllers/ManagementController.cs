@@ -19,7 +19,7 @@ namespace GameStore.Controllers
       return View();
     }
 
-    //แสดงรายการสินค้าในสต๊อก GET: /Management/Order
+    //แสดงรายการคำสั่งซื้อ GET: /Management/Order
     public IActionResult Order()
     {
       return View();
