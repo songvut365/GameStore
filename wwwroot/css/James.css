@@ -41,9 +41,10 @@
   box-sizing: border-box;
 }
 #main {
-  display: flex;
+  display:flex;
   align-items: left;
 }
 #main div {
-   flex: 1;
+  flex:1 1 auto;
+  margin:5px;
 }
