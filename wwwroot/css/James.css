@@ -1,5 +1,6 @@
-#add h2 {
-  color: gold;
+#add_title {
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
 #edit h2 {
   color: gold;
