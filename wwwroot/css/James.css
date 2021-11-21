@@ -16,9 +16,18 @@
 .price_box {
   padding: 1rem;
   background-color: #202020;
-
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.add_item{
+  background-color: #2ABB69;
+  color: #000000;
+  border: none;
+  border-radius: 1rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 #main label {
   color: rgb(255, 255, 255);
