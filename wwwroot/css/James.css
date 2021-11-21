@@ -5,10 +5,25 @@
   color: rgb(255, 255, 255);
   text-align: center;
 }
-.add_info label {
+.info_box {
+  padding: 1rem;
+  background-color: #202020;
+  width: 500px;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.price_box {
+  padding: 1rem;
+  background-color: #202020;
+
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#main label {
   color: rgb(255, 255, 255);
 }
-.add_info input {
+#main input {
   width: 100%;
   padding: 5px 15px;
   margin: 1px 0;
@@ -16,17 +31,10 @@
   border-radius: 1rem;
   box-sizing: border-box;
 }
-.info_box {
+#main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   align-items: left;
 }
-
-.add_info {
-  padding: 1rem;
-  background-color: #202020;
-  width: 500px;
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+#main div {
+   flex: 1;
 }
