@@ -1,7 +1,32 @@
+#edit h2 {
+  color: gold;
+}
 #add_title {
   color: rgb(255, 255, 255);
   text-align: center;
 }
-#edit h2 {
-  color: gold;
+.add_info label {
+  color: rgb(255, 255, 255);
+}
+.add_info input {
+  width: 100%;
+  padding: 5px 15px;
+  margin: 1px 0;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+.info_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+}
+
+.add_info {
+  padding: 1rem;
+  background-color: #202020;
+  width: 500px;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
