@@ -9,7 +9,7 @@
   <h2>เพิ่มสินค้า</h2>
 </div> 
 
-<div id="main">
+@* <div id="main">
   <div class="info_box">
     <table class="info_table">
       <tr>
@@ -59,31 +59,62 @@
       </table>
   </div>
 </div>
+<button class="add_item">เพิ่มสินค้า</button> *@
 
-<button class="add_item">เพิ่มสินค้า</button>
+<div id="add">
 
-@* <div class="info_box">
-  <div class="add_info">
-    <div id="col1">
-      <label>รูปหลัก</label>
-      <input type="text" id="main_pic">
+  <div class="Information">
+
+    <div class="info-box">
+      <div class="info-from">
+
+        <div class="info-label">
+          <div><label>รูปหลัก</label></div>
+          <div><label>รูป 2</label></div>
+          <div><label>รูป 3</label></div>
+          <div><label>ชื่อ</label></div>
+          <div><label>ผู้พัฒนา</label></div>
+          <div><label>หมวดหมู่</label></div>
+          <div><label>รายละเอียด</label></div>
+        </div>
+        
+        <div class="info-input">
+          <div><input class="input-box" type="text" id="mainpic" placeholder="image.jpg"></div>
+          <div><input class="input-box" type="text" id="" placeholder="image1.png"></div>
+          <div><input class="input-box" type="text" id="" placeholder="image2.png"></div>
+          <div><input class="input-box" type="text" id="" placeholder="image3.png"></div>
+          <div><input class="input-box" type="text" id="" placeholder="มานคาฟ"></div>
+          <div><input class="input-box" type="text" id="" placeholder="Mojang"></div>
+          <div><input class="input-box" type="text" id="" placeholder="Drama"></div>
+          <div><input class="input-box" type="text" id="" placeholder="Drama"></div>
+        </div>
+      </div>
 
     </div>
 
-    <div id="col2">
-      <label>รูป 1</label>
-      <input type="text" id="main_pic">
-    </div>
+    <div class="information">
+      <div class="info-from">
 
-    <div id="col3">
-      <button onclick="numpad('1')">1</button>
-      <button onclick="numpad('2')">2</button>
-     
-    </div>
+        <div class="info-label">
+          <div><label>รูปหลัก</label></div>
+          <div><label>รูป 2</label></div>
 
-    <div id="col4">
-      <button onclick="numpad('0')" id="zero-btn">0</button>
-      <button onclick="numpad('.')">.</button>
+        </div>
+        
+        <div class="info-input">
+          <div><input class="input-box" type="text" id="mainpic" placeholder="image.jpg"></div>
+          <div><input class="input-box" type="text" id="" placeholder="image1.png"></div>
+        </div>
+      </div>
+      
     </div>
   </div>
-</div> *@
+
+
+  <div class="right-menu">
+      <div class="total">
+        <h1>รวมทั้งหมด 1,745 บาท</h1>
+      </div>
+      <button class="accept-btn" >เพิ่มสินค้า</button>
+    </div>
+</div>
