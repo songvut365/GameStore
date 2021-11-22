@@ -98,7 +98,7 @@
   @* Footer menu *@
   <div class="footer-menu">
     <div class="left-menu">
-      <button class="back-btn">
+      <button class="back-btn" onclick="location.href='@Url.Action("Index", "Home")'">
         <i class="fas fa-chevron-left"></i>
         กลับ
       </button>
@@ -108,7 +108,9 @@
       <div class="total">
         <h1>รวมทั้งหมด 1,745 บาท</h1>
       </div>
-      <button class="accept-btn">สั่งซื้อ</button>
+      <button class="accept-btn"  onclick="location.href='@Url.Action("Success", "Cart")'">
+        สั่งซื้อ
+      </button>
     </div>
   </div>
 
