@@ -123,17 +123,16 @@
 }
 
 
-/* กล่องแบ่ง ซ้าย-ขวา */
-#add .left-menu, #add .right-menu {
-  width: 50%;
+#add .add_menu {
+  width: 100%;
+  margin-top: 10px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* ปุ่มกลับ, ปุ่มสั่งซื้อ */
-#add .back-btn, #add .accept-btn {
+#add .add_btn {
   width: 200px;
   background-color: #269c59;
   padding-top: .5rem;
@@ -145,19 +144,17 @@
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
-#add .back-btn:hover, #add .accept-btn:hover {
+
+#add .add_btn:hover {
   background-color: #51c483;
   cursor: pointer;
 }
-#add .back-btn:active, #add .accept-btn:active {
+#add .add_btn:active {
   background-color: #269c59;
 }
 
 /* responsive เมื่อกว้างน้อยกว่า 800px */
 @media (max-width: 800px) {
-  #add .footer-menu, #add .right-menu { flex-direction: column; }
-  #add .left-menu { order: 3;}
-  #add .left-menu, #add .right-menu, 
-  #add .accept-btn, #add .back-btn { width: 100%; }
-  #add .back-btn { margin-top: 1rem; }
+  #add .add_menu { flex-direction: column; }
+  #add .add_menu,#add .add_btn{ width: 100%; }
 }
