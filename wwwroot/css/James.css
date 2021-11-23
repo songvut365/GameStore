@@ -5,16 +5,8 @@
   color: rgb(255, 255, 255);
   text-align: center;
 }
-/* จัดกึ่งกลาง, ตั้งความกว้าง */
-#add, #success {
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1280px;
-}
-
 /* responsive เมื่อกว้างน้อยกว่า 800px */
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   #add .container p { font-size: 0.9rem; }
   #add .cover { width: 5rem; height: 5rem; }
   #add .game-name { width: 25%;}
@@ -27,49 +19,36 @@
     margin: 0;
   }
   #add .game-price { padding: 3px; text-align: center;}
-} 
-/*//////////////////////////////////////////////////////////////////////*/
-.info-from{
-  width: 100%;
+}  */
+
+/* responsive เมื่อกว้างน้อยกว่า 800px */
+/* @media (max-width: 800px) {
+  #add .Information { flex-direction: column; }
+  #add .info-box, #add .information {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #add .exp-cvc, #add .fname-lname {
+    flex-direction: column;
+  }
+  #add .first-input, #add .second-input {
+    width: 100%;
+  }
+} */
+
+
+#add * {
   box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px red solid;
 }
 
-.infoo > div {
-  flex: 1 1 left;
-  border: 1px red solid;
-  text-align: left;
+#add label {
+  padding: 5px 12px 12px 0;
+  display: inline-block;
 }
 
-.info-label > div {
-  border: 1px red solid;
-  text-align: left;
-  margin: 25px 10px 0px 0px;
-
-}
-.info-input{
-  flex: 2;
-  border: 1px red solid;
-  text-align: left;
-}
-.info-input > div{
-  margin-bottom: 5px; 
-}
-/*//////////////////////////////////////////////////////////////////////*/
-
-/* Information */
-/* กล่องการจ่ายเงิน */
-#add .Information {
-  display: flex;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-/* กล่องบัตรเครดิต, กล่องข้อมูล */
-#add .info-box, #add .information {
+#add .container {
+  padding: 20px;
+  float: left;
   width: 50%;
   padding: 0.5rem 2rem 2rem 2rem;
   border-radius: 8px;
@@ -77,23 +56,38 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* กล่อง 2 input */
-#add .exp-cvc, #add .fname-lname {
-  display: flex;
-  gap: 1rem;
-
+#add .col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
 }
 
-/* กล่องแบ่ง input 1 และ 2 */
-#add .first-input, 
-#add .second-input {
-  width: 50%;
-}
-#card .info-box input::placeholder {
-  color: lightgray;
+#add .col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
 }
 
-/* ช่องใส่ข้อมูล */
+/* Clear floats after the columns */
+
+#add .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#add .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+#add .float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+}  
+
+
 #add .input-box {
   padding: .5rem;
   padding-left: 1rem;
@@ -107,22 +101,11 @@
   font-weight: normal;
 }
 
-/* responsive เมื่อกว้างน้อยกว่า 800px */
-@media (max-width: 800px) {
-  #add .Information { flex-direction: column; }
-  #add .info-box, #add .information {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  #add .exp-cvc, #add .fname-lname {
-    flex-direction: column;
-  }
-  #add .first-input, #add .second-input {
-    width: 100%;
-  }
-}
 
 
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
 #add .add_menu {
   width: 100%;
   margin-top: 10px;

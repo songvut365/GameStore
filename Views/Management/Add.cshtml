@@ -5,113 +5,153 @@
   <link rel="Stylesheet" href="@Href("~/css/James.css")">
 }
 
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+#add_title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+label {
+  color: rgb(255, 255, 255);
+  padding: 5px 12px 12px 0;
+  display: inline-block;
+}
+
+.container {
+  padding: 20px;
+  float: left;
+  width: 50%;
+  padding: 0.5rem 2rem 2rem 2rem;
+  border-radius: 8px;
+  background-color: #202020;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+}  
+textarea {
+   resize: none;
+}
+
+.input-box {
+  padding: .5rem;
+  padding-left: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 0;
+  font-size: 1rem;
+  color: #212121;
+  color: gray;
+  font-weight: normal;
+}
+
+</style>
+</head>
+<body>
+
 <div id="add_title">
   <h2>เพิ่มสินค้า</h2>
 </div> 
 
-@* <div id="main">
-  <div class="info_box">
-    <table class="info_table">
-      <tr>
-        <td><label>รูปหลัก</label></td>
-        <td><input type="text" id="main_pic"></td>
-      </tr>
-      <tr>
-        <td><label>รูปที่ 1</label></td>
-        <td><input type="text" id=""></td>
-      <tr>
-        <td><label>รูปที่ 2</label></td>
-        <td><input type="text" id=""></td>
-      </tr>
-      <tr>
-        <td><label>รูปที่ 3</label></td>
-        <td><input type="text" id=""></td>
-      </tr>
-      <tr>
-        <td><label>ชื่อเกม</label></td>
-        <td><input type="text" id=""></td>
-      </tr>
-      <tr>
-        <td><label>ผู้พัฒนา</label></td>
-        <td><input type="text" id=""></td>
-      </tr>
-      <tr>
-        <td><label>หมวดหมู่</label></td>
-        <td><input type="text" id=""></td>
-      </tr>
-      <tr>
-        <td><label>รายละเอียด</label></td>
-        <td><input type="text" id=""></td>
-      </tr>   
-    </table>
-  </div>
-
-  <div class="price_box">
-      <table class="price_table">
-        <tr>
-          <td><label>ราคา</label></td>
-          <td><input type="text" id="price_add"></td>
-        </tr>
-        <tr>
-          <td><label>จำนวน</label></td>
-          <td><input type="text" id="amount_add"></td>
-        </tr>
-      </table>
-  </div>
-</div>
-<button class="add_item">เพิ่มสินค้า</button> *@
-
-<div id="add">
-
-  <div class="Information">
-
-    <div class="info-box">
-      <div class="info-from">
-
-        <div class="info-label">
-          <div><label>รูปหลัก</label></div>
-          <div><label>รูป 2</label></div>
-          <div><label>รูป 3</label></div>
-          <div><label>ชื่อ</label></div>
-          <div><label>ผู้พัฒนา</label></div>
-          <div><label>หมวดหมู่</label></div>
-          <div><label>รายละเอียด</label></div>
+<div class="float-container">
+  <div class="container">
+    <form>
+      @*Add Main pic*@
+      <div class="row">
+        <div class="col-25">
+          <label for="add_mainpic">รูปหลัก</label>
         </div>
-        
-        <div class="info-input">
-          <div><input class="input-box" type="text" id="mainpic" placeholder="image.jpg"></div>
-          <div><input class="input-box" type="text" id="add_pic_1" placeholder="image1.png"></div>
-          <div><input class="input-box" type="text" id="add_pic_2" placeholder="image2.png"></div>
-          <div><input class="input-box" type="text" id="add_pic_3" placeholder="image3.png"></div>
-          <div><input class="input-box" type="text" id="add_game_name" placeholder="มานคาฟ"></div>
-          <div><input class="input-box" type="text" id="add_game_dev" placeholder="Mojang"></div>
-          <div><input class="input-box" type="text" id="add_game_cat" placeholder="Drama"></div>
-          <div><input class="input-box" type="text" id="add_game_detail" placeholder="Drama"></div>
+        <div class="col-75">
+          <input class="input-box" type="text" id="add_mainpic" placeholder="image.jpg">
         </div>
       </div>
-    </div>
 
-    <div class="information">
-      <div class="info-from">
-
-        <div class="info-label">
-          <div><label>ราคา</label></div>
-          <div><label>จำนวน</label></div>
+      @*Add Pic 1*@
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">รูป 1</label>
         </div>
-        
-        <div class="info-input">
-          <div><input class="input-box" type="text" id="add_price" placeholder="355"></div>
-          <div><input class="input-box" type="text" id="add_amount" placeholder="4"></div>
+        <div class="col-75">
+          <input class="input-box" type="text" id="add_pic_1" placeholder="image1.png">
         </div>
-      </div>    
-    </div>
+      </div>
 
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Subject</label>
+        </div>
+        <div class="col-75">
+          <textarea class="input-box" type="text" id="add_game_detail" placeholder="Drama" style="height:150px"></textarea>
+        </div>
+      </div>
+
+    </form>
   </div>
 
+<div class="float-container">
+  <div class="container">
+    <form>
 
-  <div class="add_menu">
-      <div></div>  
-      <button class="add_btn" >เพิ่มสินค้า</button>
+      @*add_price*@
+      <div class="row">
+        <div class="col-25">
+          <label for="add_price">ราคา</label>
+        </div>
+        <div class="col-75">
+          <input class="input-box" type="text" id="add_price" placeholder="355">
+        </div>
+      </div>
+
+      @*add_amount*@
+      <div class="row">
+        <div class="col-25">
+          <label for="add_amount">จำนวน</label>
+        </div>
+        <div class="col-75">
+          <input class="input-box" type="text" id="add_amount" placeholder="4">
+        </div>
+      </div>
+
+    </form>
   </div>
-
 </div>
+
+<div class="add_menu">
+  <div></div>  
+  <button class="add_btn" >เพิ่มสินค้า</button>
+</div>
+
+</body>
+</html>
