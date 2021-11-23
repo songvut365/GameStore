@@ -1,12 +1,13 @@
 @{
   ViewData["Title"] = "Add Stock";
 }
+
 @section css {
   <link rel="Stylesheet" href="@Href("~/css/James.css")">
 }
 
- @*add_title*@
-<div id="add_title">
+ @*james_title*@
+<div id="james_title">
   <h2>เพิ่มสินค้า</h2>
 </div> 
 
@@ -28,7 +29,7 @@
         @*add_pic_1*@
         <div class="row">
           <div class="col-20">
-            <label for="add_pic_1">รูป 1</label>
+            <label for="add_pic_1">รูปที่ 1</label>
           </div>
           <div class="col-80">
             <input class="input-box" type="text" id="add_pic_1" placeholder="image1.png">
@@ -38,7 +39,7 @@
         @*add_pic_2*@
         <div class="row">
           <div class="col-20">
-            <label for="add_pic_2">รูป 2</label>
+            <label for="add_pic_2">รูปที่ 2</label>
           </div>
           <div class="col-80">
             <input class="input-box" type="text" id="add_pic_2" placeholder="image2.png">
@@ -48,7 +49,7 @@
         @*add_pic_3*@
         <div class="row">
           <div class="col-20">
-            <label for="add_pic_3">รูป 3</label>
+            <label for="add_pic_3">รูปที่ 3</label>
           </div>
           <div class="col-80">
             <input class="input-box" type="text" id="add_pic_3" placeholder="image3.png">
@@ -78,7 +79,7 @@
         @*add_game_cat*@
         <div class="row">
           <div class="col-20">
-            <label for="add_game_cat">หมวดหมู</label>
+            <label for="add_game_cat">หมวดหมู่</label>
           </div>
           <div class="col-80">
             <input class="input-box" type="text" id="add_game_cat" placeholder="Drama">
@@ -91,7 +92,7 @@
             <label for="add_game_detail">รายละเอียด</label>
           </div>
           <div class="col-80">
-            <textarea class="input-box" type="text" id="add_game_detail" placeholder="สุดยอดเกม sci-fi, action, drama,RPG, FPS, Strategy แห่งทศวรรษโปรดเพิ่มกับฉันแบบสัตว์" style="height:150px"></textarea>
+            <textarea class="input-box" type="text" id="add_game_detail" placeholder="สุดยอดเกม sci-fi, action, drama,RPG, FPS, Strategy แห่งทศวรรษ โปรดเพิ่มกับฉันแบบสัตว์" style="height:150px"></textarea>
           </div>
         </div>
 
@@ -125,10 +126,7 @@
         </form>
       </div>
 
-      @*add_btn*@
-      <div class="add_menu">
-        <button class="add_btn" >เพิ่มสินค้า</button>
-      </div>
+      <button class="james_btn" id="add_item">เพิ่มสินค้า</button>
 
     </div>
   </div>
