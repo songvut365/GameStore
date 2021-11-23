@@ -1,94 +1,68 @@
 #edit h2 {
   color: gold;
 }
+
+/*//////////////////////////////////////////////////////////////////////*/
 #add_title {
   color: rgb(255, 255, 255);
   text-align: center;
 }
-/* responsive เมื่อกว้างน้อยกว่า 800px */
-/* @media (max-width: 800px) {
-  #add .container p { font-size: 0.9rem; }
-  #add .cover { width: 5rem; height: 5rem; }
-  #add .game-name { width: 25%;}
-  #add .game-action { width: 25%; align-items: center;}
-  #add .game-action button { 
-    width: 20px; 
-    height: 20px; 
-    font-size: 0.8rem; 
-    padding: 0;
-    margin: 0;
-  }
-  #add .game-price { padding: 3px; text-align: center;}
-}  */
 
-/* responsive เมื่อกว้างน้อยกว่า 800px */
-/* @media (max-width: 800px) {
-  #add .Information { flex-direction: column; }
-  #add .info-box, #add .information {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  #add .exp-cvc, #add .fname-lname {
-    flex-direction: column;
-  }
-  #add .first-input, #add .second-input {
-    width: 100%;
-  }
-} */
-
-
-#add * {
+* {
   box-sizing: border-box;
 }
 
-#add label {
+label {
+  color: rgb(255, 255, 255);
   padding: 5px 12px 12px 0;
   display: inline-block;
 }
 
-#add .container {
-  padding: 20px;
-  float: left;
-  width: 50%;
+.left-box, .right-box {
+  flex: 1;
   padding: 0.5rem 2rem 2rem 2rem;
   border-radius: 8px;
   background-color: #202020;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-#add .col-25 {
+.float-box {
+  display: flex;
+  width: 100%;
+}
+
+.left-box {
+  margin-right: 15px;
+}
+
+.right-box {
+  height:75%;
+}
+
+.col-25 {
   float: left;
   width: 25%;
   margin-top: 6px;
 }
 
-#add .col-75 {
+.col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
 }
 
 /* Clear floats after the columns */
-
-#add .row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
 }
-#add .float-container {
-    border: 3px solid #fff;
-    padding: 20px;
+
+textarea {
+   resize: none;
 }
 
-#add .float-child {
-    width: 50%;
-    float: left;
-    padding: 20px;
-    border: 2px solid red;
-}  
-
-
-#add .input-box {
+.input-box {
   padding: .5rem;
   padding-left: 1rem;
   width: 100%;
@@ -101,43 +75,13 @@
   font-weight: normal;
 }
 
-
-
-
-
-/*/////////////////////////////////////////////////////////////////////////*/
-#add .add_menu {
-  width: 100%;
-  margin-top: 10px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#add .add_btn {
-  width: 200px;
-  background-color: #269c59;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-
-#add .add_btn:hover {
-  background-color: #51c483;
-  cursor: pointer;
-}
-#add .add_btn:active {
-  background-color: #269c59;
-}
-
-/* responsive เมื่อกว้างน้อยกว่า 800px */
-@media (max-width: 800px) {
-  #add .add_menu { flex-direction: column; }
-  #add .add_menu,#add .add_btn{ width: 100%; }
+@media (max-width: 1000px) {
+  .float-box { flex-direction: column; }
+  .left-box, .right-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .right-box {
+    margin-top: 15px;
+  }
 }
