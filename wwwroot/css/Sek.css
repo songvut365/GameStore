@@ -1,3 +1,143 @@
-#list h2 {
-  color: green;
+
+#list {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
 }
+
+
+#list .container {
+    border-radius: 8px;
+    background-color: #202020;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+#list .add-store {
+    
+     display: flex;
+     flex-wrap: wrap;
+     float:right;
+}
+
+
+#list .container p {
+    font-size: 1.5rem;
+}
+
+#list .cover {
+    width: 13rem;
+    height: 13rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+    margin: 0;
+    padding: 0;
+}
+
+
+#list .cover img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+#list .game-name {
+    width: 30%;
+    text-align: left;
+}
+
+
+#list .edit-store, #list .del-store, #list .add-store {
+     width: 9%;
+     display: flex;
+     align-items: center;
+}
+
+#list .edit-store button , #list .del-store button, #list .add-store button {
+      font-size: 1rem;
+      width: 80px;
+      height: 80px;
+      border-radius: 3rem;
+      border: none;
+      background-color: #2ABB69;
+}
+
+#list .edit-store button:hover, #list .del-store button:hover, #list .add-store button:hover {
+     background-color: #51c483;
+     cursor: pointer;
+}
+
+  #list .edit-store button:active, #list .del-store button:active, #list .add-store button:active {
+      background-color: #269c59;
+  }
+
+  #list .group-text{width: 80%; display: flex; justify-content: space-evenly;}
+
+  /*================================================================*/
+
+#order {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+}
+
+    
+    #order .container {
+        border-radius: 8px;
+        background-color: #202020;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
+        
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    #order .head-col {
+        border-radius: 8px;
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
+        
+    }
+    
+    #order .head-col p {
+        font-size: 0.8rem;
+    }
+    
+    #order .container p {
+        font-size: 1rem;
+    }
+
+    @media (max-width :800px){
+        #order .container { width: 100%;}
+        #order .container p {font-size: 0.5rem;}
+        #order .head-col p {font-size: 0.5rem;}
+
+        #list .container{ width: 100%; justify-content: space-between;}
+        #list .container p { font-size:0.7rem;}
+        #list .add-store button {width: 30px; height: 30px; font-size: 1rem;}
+        #list .edit-store button, #list .del-store button {
+            width: 30px; 
+            height: 30px; 
+            font-size: 70%;
+        }
+        #list .cover {
+            object-fit: cover;
+            width: 15%;
+            height: 20%;
+          }
+        #list .del-store, #list .edit-store, #list .add-store{width: max-content;}
+        #list .game-name {width: 15%; font-size: 1rem;}
+        #list .game-remain {width: 20%;}
+        #list .group-text{width: 80%; display: flex; justify-content: space-evenly;}
+    }   
