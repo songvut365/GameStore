@@ -1,5 +1,5 @@
 @{
-  ViewData["Title"] = ViewData["Tpye"];
+  ViewData["Title"] = ViewData["type"];
 }
 
 @section css {
@@ -7,5 +7,48 @@
 }
 
 <div id="type">
-  <h2>Store Type @ViewData["Type"]</h2>
+
+
+<span id="cat-label"><h1>@ViewData["type"]</h1></span>
+
+    <div id="item-wrapper">
+
+        <!--  //Raw Mockup
+            <div id="item-cat" class="shadowBox">
+
+                <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg">
+
+                <div id="item-sub-container">
+
+                    <div id="item-label"><h2>Minecraft</h2><h3>Mojang</h3></div>
+                    <div id="item-sub-label"><div><h3>200 บาท</h3></div><div><h1>150 บาท</h1></div></div>
+                </div>
+            </div> 
+            -->
+
+
+
+        <script>
+            //Test loop value for generate div
+            var x = "", i;
+            data = ['minecraft', 'pubg', 'COD', 'BF','LOL']
+            for (i = 1; i < 5; i++) { 
+                x += `
+                <div id="item-cat" class="shadowBox">
+
+                    <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg">
+
+                        <div id="item-sub-container">
+
+                            <div id="item-label"><h2>`+ data[i] + `</h2><h3>Mojang</h3></div>
+                            <div id="item-sub-label"><div><h3>200 บาท</h3></div><div><h1>150 บาท</h1></div></div>
+                        </div>
+                </div>
+            `;
+            }
+            document.getElementById("item-wrapper").innerHTML = x;
+        </script>
+
+
+    </div>
 </div>
