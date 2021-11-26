@@ -1,3 +1,223 @@
-#home h2{
-  color: black;
+#store #cart-wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap: 35px;
 }
+
+#store #card-cat {
+    background-color: #202020;
+    width: 290px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4%;
+    align-items: center;
+     
+    margin-top:15px;
+}
+
+#store #card-cat h3 {
+    margin-top: 4px;
+}
+#store #card-cat img {
+    margin-top: 15px;
+    width: 255px;
+    height: 150px;
+    object-fit: none; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    border-radius: 4%;
+ 
+}
+#store #cat-label {
+    color: white;
+    
+}
+
+#store hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #134E5E;
+    margin: 3em 0;
+    padding: 0;
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 1250px) {
+    #store hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 2px solid #134E5E;
+        margin: 3em 0;
+        padding: 0;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+#store #item-wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap:35px;
+}
+
+#store #item-cat {
+    background-color: #202020;
+    width: 290px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4%;
+     
+    margin-top: 15px;
+}
+
+#store #item-wrapper #item-cat img {
+    width: 290px;
+    height: 350px;
+    object-fit: none; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    border-radius: 4%;
+}
+
+
+#store #item-wrapper #item-cat #cat-container {
+    margin-left: 12px;
+}
+
+    #store #item-wrapper #item-cat #item-label {
+        color: white;
+    }
+
+#store #item-wrapper #item-cat #item-label h2 {
+    margin-bottom: 1px;
+}
+
+#store #item-wrapper #item-cat #item-label h3 {
+    color: #0F0F0F;
+    margin-bottom: 3px;
+    margin-top: 1px;
+}
+
+    #store #item-wrapper #item-cat #item-sub-label {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+
+    #store #item-wrapper #item-cat #item-sub-label h3 {
+        text-decoration: line-through;
+        color:red;
+    }
+
+        #store #item-wrapper #item-cat #item-sub-label h1 {
+            color: white;
+        }
+
+#store #item-sub-container {
+margin-left:15px;
+margin-right:15px;
+}
+#store img:hover {
+    opacity:0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#type #item-wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap:35px;
+}
+
+#type #item-cat {
+    background-color: #202020;
+    width: 290px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4%;
+     
+    margin-top: 15px;
+}
+
+#type #item-wrapper #item-cat img {
+    width: 290px;
+    height: 350px;
+    object-fit: none; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    border-radius: 4%;
+}
+
+
+#type #item-wrapper #item-cat #cat-container {
+    margin-left: 12px;
+}
+
+    #type #item-wrapper #item-cat #item-label {
+        color: white;
+    }
+
+#type #item-wrapper #item-cat #item-label h2 {
+    margin-bottom: 1px;
+}
+
+#type #item-wrapper #item-cat #item-label h3 {
+    color: #0F0F0F;
+    margin-bottom: 3px;
+    margin-top: 1px;
+}
+
+    #type #item-wrapper #item-cat #item-sub-label {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:space-between;
+    }
+
+    #type #item-wrapper #item-cat #item-sub-label h3 {
+        text-decoration: line-through;
+        color:red;
+    }
+
+        #type #item-wrapper #item-cat #item-sub-label h1 {
+            color: white;
+        }
+
+#type #item-sub-container {
+margin-left:15px;
+margin-right:15px;
+}
+#type img:hover {
+    opacity:0.8;
+}
+
+#type #cat-label {
+text-align: center;
+text-shadow: 0 0 2px grey, 0 0 12px white;
+    }
