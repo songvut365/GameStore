@@ -1,5 +1,5 @@
 @{
-  ViewData["Title"] = "List";
+  ViewData["Title"] = "Success";
 }
 
 @section css {
@@ -7,5 +7,14 @@
 }
 
 <div id="success">
-  <h2>Success</h2>
+  <div class="success-box">
+    <span class="icon">
+      <i class="fas fa-check-circle" ></i>
+    </span>
+    <p class="text">สั่งซื้อสำเร็จ</p>
+  </div><br>
+
+  <button class="accept-btn" onclick="location.href='@Url.Action("Index", "Home")'">
+    เสร็จสิ้น
+  </button>
 </div>
