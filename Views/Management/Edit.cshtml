@@ -6,6 +6,128 @@
   <link rel="Stylesheet" href="@Href("~/css/James.css")">
 }
 
-<div id="edit">
-  <h2>Edit Stock ID: @ViewData["Id"]</h2>
+ @*james_title*@
+<div id="james_title">
+  <h2>แก้ไขสินค้าที่: @ViewData["Id"]</h2>
+</div>
+
+<div class="size-box">
+  <div class="float-box">
+    <div class="left-box">
+      <form>
+
+        @*edit_mainpic*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_mainpic">รูปหลัก</label>
+          </div>
+          <div class="col-80">
+            <input class="input-box" type="text" id="edit_mainpic" placeholder="image.jpg">
+          </div>
+        </div>
+
+        @*edit_pic_1*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_pic_1">รูปที่ 1</label>
+          </div>
+          <div class="col-80">
+            <input class="input-box" type="text" id="edit_pic_1" placeholder="image1.png">
+          </div>
+        </div>
+
+        @*edit_pic_2*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_pic_2">รูปที่ 2</label>
+          </div>
+          <div class="col-80">
+            <input class="input-box" type="text" id="edit_pic_2" placeholder="image2.png">
+          </div>
+        </div>
+
+        @*edit_pic_3*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_pic_3">รูปที่ 3</label>
+          </div>
+          <div class="col-80">
+            <input class="input-box" type="text" id="edit_pic_3" placeholder="image3.png">
+          </div>
+        </div>
+
+        @*edit_game_name*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_game_name">ชื่อ</label>
+          </div>
+          <div class="col-80">
+            <input class="input-box" type="text" id="edit_game_name" placeholder="มานคาฟ">
+          </div>
+        </div>
+
+        @*edit_game_dev*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_game_dev">ผู้พัฒนา</label>
+          </div>
+          <div class="col-80">
+            <input class="input-box" type="text" id="edit_game_dev" placeholder="Mojang">
+          </div>
+        </div>
+
+        @*edit_game_cat*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_game_cat">หมวดหมู่</label>
+          </div>
+          <div class="col-80">
+            <input class="input-box" type="text" id="edit_game_cat" placeholder="Drama">
+          </div>
+        </div>
+
+        @*edit_game_detail*@
+        <div class="row">
+          <div class="col-20">
+            <label for="edit_game_detail">รายละเอียด</label>
+          </div>
+          <div class="col-80">
+            <textarea class="input-box" type="text" id="edit_game_detail" placeholder="สุดยอดเกม sci-fi, action, drama,RPG, FPS, Strategy แห่งทศวรรษ ขอบคุณนะ ช่วยได้มากๆเลย" style="height:150px"></textarea>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="fixed-box">
+      <div class="right-box">
+        <form>
+
+          @*edit_price*@
+          <div class="row">
+            <div class="col-25">
+              <label for="edit_price">ราคา</label>
+            </div>
+            <div class="col-75">
+              <input class="input-box" type="text" id="edit_price" placeholder="355">
+            </div>
+          </div>
+
+          @*edit_amount*@
+          <div class="row">
+            <div class="col-25">
+              <label for="edit_amount">จำนวน</label>
+            </div>
+            <div class="col-75">
+              <input class="input-box" type="text" id="edit_amount" placeholder="4">
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <button class="james_btn" id="edit_item">แก้ใขสินค้า</button>
+
+    </div>
+  </div>
 </div>
