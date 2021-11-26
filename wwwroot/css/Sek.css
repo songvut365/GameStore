@@ -17,6 +17,11 @@
     margin-bottom: 1rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+#list .add-store {
+     display: flex;
+     flex-wrap: wrap;
+     float:right;
+}
 
 /* ตัวอักษรในแต่ละเกม */
 #list .container p {
@@ -45,27 +50,26 @@
 }
 
 /* กล่องปุ่มลบ, แก้ไข */
-#list .edit-store, #list .del-store {
-      width: 9%;
-      display: flex;
-      align-items: center;
-    
+#list .edit-store, #list .del-store, #list .add-store {
+     width: 9%;
+     display: flex;
+     align-items: center;
 }
 
-#list .edit-store button, #list .del-store button {
-       font-size: 2rem;
-       width: 50px;
-       height: 50px;
-       border-radius: 3rem;
-       border: none;
-       background-color: #2ABB69;
- }
+#list .edit-store button, #list .del-store button, #list .add-store button {
+      font-size: 2rem;
+      width: 80px;
+      height: 80px;
+      border-radius: 3rem;
+      border: none;
+      background-color: #2ABB69;
+}
 
-#list .edit-store button:hover, #list .del-store button:hover {
-      background-color: #51c483;
-      cursor: pointer;
- }
+#list .edit-store button:hover, #list .del-store button:hover, #list .add-store button:hover {
+     background-color: #51c483;
+     cursor: pointer;
+}
 
-#list .edit-store button:active, #list .del-store button:active {
+  #list .edit-store button:active, #list .del-store button:active, #list .add-store button:active {
       background-color: #269c59;
-}
+  }
