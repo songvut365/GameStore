@@ -18,6 +18,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 #list .add-store {
+    
      display: flex;
      flex-wrap: wrap;
      float:right;
@@ -56,8 +57,8 @@
      align-items: center;
 }
 
-#list .edit-store button, #list .del-store button, #list .add-store button {
-      font-size: 2rem;
+#list .edit-store button , #list .del-store button, #list .add-store button {
+      font-size: 1rem;
       width: 80px;
       height: 80px;
       border-radius: 3rem;
@@ -74,7 +75,9 @@
       background-color: #269c59;
   }
 
-/*================================================================*/
+  #list .group-text{width: 80%; display: flex; justify-content: space-evenly;}
+
+  /*================================================================*/
 
 #order {
     color: white;
@@ -116,7 +119,25 @@
     }
 
     @media (max-width :800px){
-        #order .container { width: 100%; }
+        #order .container { width: 100%;}
         #order .container p {font-size: 0.5rem;}
         #order .head-col p {font-size: 0.5rem;}
+
+        #list .container{ width: 100%; justify-content: space-between;}
+        #list .container p { font-size:0.7rem;}
+        #list .add-store button {width: 30px; height: 30px; font-size: 1rem;}
+        #list .edit-store button, #list .del-store button {
+            width: 30px; 
+            height: 30px; 
+            font-size: 70%;
+        }
+        #list .cover {
+            object-fit: cover;
+            width: 15%;
+            height: 20%;
+          }
+        #list .del-store, #list .edit-store, #list .add-store{width: max-content;}
+        #list .game-name {width: 15%; font-size: 1rem;}
+        #list .game-remain {width: 20%;}
+        #list .group-text{width: 80%; display: flex; justify-content: space-evenly;}
     }   
