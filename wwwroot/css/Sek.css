@@ -1,3 +1,71 @@
-#list h2 {
-  color: green;
+/* จัดกึ่งกลาง, ตั้งความกว้าง */
+#list {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+}
+
+ /* รายการแต่ละเกม */
+#list .container {
+    border-radius: 8px;
+    background-color: #202020;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ตัวอักษรในแต่ละเกม */
+#list .container p {
+    font-size: 1.5rem;
+}
+
+#list .cover {
+    width: 13rem;
+    height: 13rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+    margin: 0;
+    padding: 0;
+}
+
+/* รูปภาพเกม */
+#list .cover img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* ชื่อเกม */
+#list .game-name {
+    width: 30%;
+    text-align: left;
+}
+
+/* กล่องปุ่มลบ, แก้ไข */
+#list .edit-store, #list .del-store {
+      width: 9%;
+      display: flex;
+      align-items: center;
+    
+}
+
+#list .edit-store button, #list .del-store button {
+       font-size: 2rem;
+       width: 50px;
+       height: 50px;
+       border-radius: 3rem;
+       border: none;
+       background-color: #2ABB69;
+ }
+
+#list .edit-store button:hover, #list .del-store button:hover {
+      background-color: #51c483;
+      cursor: pointer;
+ }
+
+#list .edit-store button:active, #list .del-store button:active {
+      background-color: #269c59;
 }
