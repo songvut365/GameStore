@@ -18,6 +18,10 @@
      
     margin-top:15px;
 }
+
+#store #card-cat h3 {
+    margin-top: 4px;
+}
 #store #card-cat img {
     margin-top: 15px;
     width: 255px;
