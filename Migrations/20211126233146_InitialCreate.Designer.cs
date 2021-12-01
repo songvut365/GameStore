@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameStore.Migrations
 {
-    [DbContext(typeof(MvcGameContext))]
+    [DbContext(typeof(DBContext))]
     [Migration("20211126233146_InitialCreate")]
     partial class InitialCreate
     {

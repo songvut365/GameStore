@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameStore.Migrations
 {
-    [DbContext(typeof(MvcGameContext))]
+    [DbContext(typeof(DBContext))]
     partial class MvcGameContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

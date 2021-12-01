@@ -7,9 +7,9 @@ using GameStore.Models;
 
 namespace GameStore.Data
 {
-    public class MvcGameContext : DbContext
+    public class DBContext : DbContext
     {
-        public MvcGameContext(DbContextOptions<MvcGameContext> options)
+        public DBContext(DbContextOptions<DBContext> options)
             : base(options)
         {
         }
