@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameStore.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20211126233146_InitialCreate")]
+    [Migration("20211203232941_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,9 @@ namespace GameStore.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Youtube")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

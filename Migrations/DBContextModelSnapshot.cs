@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameStore.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class MvcGameContextModelSnapshot : ModelSnapshot
+    partial class DBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,9 @@ namespace GameStore.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Youtube")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

@@ -12,7 +12,7 @@ namespace GameStore.Controllers
 {
     public class GameController : Controller
     {
-        private readonly DBContext  _context;
+        private readonly  DBContext _context;
 
         public GameController(DBContext context)
         {
@@ -54,7 +54,7 @@ namespace GameStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount")] Game game)
+        public async Task<IActionResult> Create([Bind("Id,Youtube,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount")] Game game)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace GameStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount")] Game game)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Youtube,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount")] Game game)
         {
             if (id != game.Id)
             {

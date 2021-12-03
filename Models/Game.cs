@@ -8,6 +8,8 @@ namespace GameStore.Models
     public class Game
     {
         public int Id { get; set; }
+
+        public String Youtube { get; set; }
         public String Main_Image { get; set; }
         public String Image1 { get; set; }
         public String Image2 { get; set; }

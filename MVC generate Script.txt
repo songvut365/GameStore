@@ -1,0 +1,4 @@
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+dotnet aspnet-codegenerator controller -name GameController -m Game -dc DBContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name OrderController -m Order -dc DBContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries

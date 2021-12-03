@@ -12,6 +12,7 @@ namespace GameStore.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Youtube = table.Column<string>(type: "TEXT", nullable: true),
                     Main_Image = table.Column<string>(type: "TEXT", nullable: true),
                     Image1 = table.Column<string>(type: "TEXT", nullable: true),
                     Image2 = table.Column<string>(type: "TEXT", nullable: true),
