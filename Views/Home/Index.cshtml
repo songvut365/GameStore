@@ -50,13 +50,13 @@ console.log(data)
                      //Test loop value for generate div
             var x = "", i;
             
-            for (i = 1; i < 5; i++) { 
+            for (i = 0; i <data.length; i++) { 
                 x += `
             <div class="card">
                 <img src="/img/img_main/`+data[i].main_Image+`">
                 <div class="card-context">
                     <h2 class="card-game-name">`+data[i].name+`</h2>
-                    <h3 class="card-game-provider">`+data[i].developper+`</h3>
+                    <h3 class="card-game-provider">`+data[i].developer+`</h3>
                     <div class="card-price-conetxt">
                         <h3 class="price-discount">`+(data[i].price+350)+`</h3>
                         <h2 class="price-static">`+data[i].price+`</h2>
