@@ -75,7 +75,6 @@
 #store #item-cat {
     background-color: #202020;
     width: 290px;
-    height: 520px;
     display: flex;
     flex-direction: column;
     border-radius: 4%;
@@ -124,6 +123,7 @@
 
         #store #item-wrapper #item-cat #item-sub-label h1 {
             color: white;
+            margin-bottom: 5px;
         }
 
 #store #item-sub-container {
