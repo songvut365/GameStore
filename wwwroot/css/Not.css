@@ -237,6 +237,9 @@
 }
 
 #success .text {
+  padding: 0;
+  margin: 0;
+  margin-top: 2rem;
   font-size: 3rem;
 }
 
@@ -266,4 +269,39 @@
   #success .success-box { width: 100%; }
   #success .icon { font-size: 10rem; height: 12rem; }
   #success .text { font-size: 2rem; }
+}
+
+#success .icon-error {
+  color: #c0392b;
+  font-size: 15rem;
+  padding: 0;
+  height: 16rem;
+}
+
+#success .sub-text {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+
+/* ปุ่มกลับหน้า failed */
+#success .error-btn {
+  width: 200px;
+  background-color: #c0392b;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+#success .error-btn:hover {
+  background-color: #e74c3c;
+  cursor: pointer;
+}
+#success .error-btn:active {
+  background-color: #c0392b;
 }
