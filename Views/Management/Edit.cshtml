@@ -13,10 +13,12 @@
   <h2>แก้ไขสินค้าที่: @ViewData["Id"]</h2>
 </div>
 
+@* ////////////////// FROM ZONE ////////////////// *@
+<form asp-action="Edit" id="Edited">
+@* ////////////////// LEFT BOX /////////////////// *@
 <div class="size-box">
   <div class="float-box">
     <div class="left-box">
-      <form asp-action="Edit">
 
         @*edit_mainpic*@
         <div class="row">
@@ -97,13 +99,12 @@
             <textarea asp-for="Detail" class="input-box" style="height:150px"></textarea>
           </div>
         </div>
-          <input type="submit" value="Save" class="btn btn-primary" />
-      </form>
+        
     </div>
 
+@* ////////////////// RIGHT BOX ////////////////// *@
     <div class="fixed-box">
       <div class="right-box">
-        <form>
 
           @*edit_price*@
           <div class="row">
@@ -125,11 +126,11 @@
             </div>
           </div>
 
-        </form>
       </div>
 
-      @* <input type="submit" value="Save" class="btn btn-primary" /> *@
-      @* <button class="james_btn" id="edit_item">แก้ใขสินค้า</button> *@
+      @*Button Submit Edit*@
+      <input type="submit" value="แก้ใขสินค้า" class="james_btn" />
+</form>
 
     </div>
   </div>
