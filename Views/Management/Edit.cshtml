@@ -1,3 +1,5 @@
+@model GameStore.Models.Game
+
 @{
   ViewData["Title"] = "Edit Stock";
 }
@@ -14,7 +16,7 @@
 <div class="size-box">
   <div class="float-box">
     <div class="left-box">
-      <form>
+      <form asp-action="Edit">
 
         @*edit_mainpic*@
         <div class="row">
@@ -22,7 +24,7 @@
             <label for="edit_mainpic">รูปหลัก</label>
           </div>
           <div class="col-80">
-            <input class="input-box" type="text" id="edit_mainpic" placeholder="image.jpg">
+            <input asp-for="Main_Image" class="input-box" />
           </div>
         </div>
 
@@ -32,7 +34,7 @@
             <label for="edit_pic_1">รูปที่ 1</label>
           </div>
           <div class="col-80">
-            <input class="input-box" type="text" id="edit_pic_1" placeholder="image1.png">
+            <input asp-for="Image1" class="input-box" />
           </div>
         </div>
 
@@ -42,7 +44,7 @@
             <label for="edit_pic_2">รูปที่ 2</label>
           </div>
           <div class="col-80">
-            <input class="input-box" type="text" id="edit_pic_2" placeholder="image2.png">
+            <input asp-for="Image2" class="input-box" />
           </div>
         </div>
 
@@ -52,7 +54,7 @@
             <label for="edit_pic_3">รูปที่ 3</label>
           </div>
           <div class="col-80">
-            <input class="input-box" type="text" id="edit_pic_3" placeholder="image3.png">
+            <input asp-for="Image3" class="input-box" />
           </div>
         </div>
 
@@ -62,7 +64,7 @@
             <label for="edit_game_name">ชื่อ</label>
           </div>
           <div class="col-80">
-            <input class="input-box" type="text" id="edit_game_name" placeholder="มานคาฟ">
+            <input asp-for="Name" class="input-box" />
           </div>
         </div>
 
@@ -72,7 +74,7 @@
             <label for="edit_game_dev">ผู้พัฒนา</label>
           </div>
           <div class="col-80">
-            <input class="input-box" type="text" id="edit_game_dev" placeholder="Mojang">
+            <input asp-for="Developer" class="input-box" />
           </div>
         </div>
 
@@ -82,7 +84,7 @@
             <label for="edit_game_cat">หมวดหมู่</label>
           </div>
           <div class="col-80">
-            <input class="input-box" type="text" id="edit_game_cat" placeholder="Drama">
+            <input asp-for="Type" class="input-box" />
           </div>
         </div>
 
@@ -92,10 +94,10 @@
             <label for="edit_game_detail">รายละเอียด</label>
           </div>
           <div class="col-80">
-            <textarea class="input-box" type="text" id="edit_game_detail" placeholder="สุดยอดเกม sci-fi, action, drama,RPG, FPS, Strategy แห่งทศวรรษ ขอบคุณนะ ช่วยได้มากๆเลย" style="height:150px"></textarea>
+            <textarea asp-for="Detail" class="input-box" style="height:150px"></textarea>
           </div>
         </div>
-
+          <input type="submit" value="Save" class="btn btn-primary" />
       </form>
     </div>
 
@@ -109,7 +111,7 @@
               <label for="edit_price">ราคา</label>
             </div>
             <div class="col-75">
-              <input class="input-box" type="text" id="edit_price" placeholder="355">
+              <input asp-for="Price" class="input-box" />
             </div>
           </div>
 
@@ -119,15 +121,20 @@
               <label for="edit_amount">จำนวน</label>
             </div>
             <div class="col-75">
-              <input class="input-box" type="text" id="edit_amount" placeholder="4">
+              <input asp-for="Amount" class="input-box" />
             </div>
           </div>
 
         </form>
       </div>
 
-      <button class="james_btn" id="edit_item">แก้ใขสินค้า</button>
+      @* <input type="submit" value="Save" class="btn btn-primary" /> *@
+      @* <button class="james_btn" id="edit_item">แก้ใขสินค้า</button> *@
 
     </div>
   </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
