@@ -158,9 +158,6 @@ img {
 }
 
     .card img {
-        object-fit: none; /* Do not scale the image */
-        object-position: center; /* Center the image within the element */
-        height: 400px;
         width: 250px;
     }
 
@@ -193,6 +190,7 @@ img {
     color: white;
     margin-top: 0px;
     text-align: left;
+    font-size: 100%;
 }
 
 .card-game-provider {

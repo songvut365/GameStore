@@ -1,26 +1,31 @@
 ﻿@section css {
-  <link rel="Stylesheet" href="@Href("~/css/Euro.css")">
+<link rel="Stylesheet" href="@Href("~/css/Euro.css")">
 }
 
 <div id="home">
 
     @{
-      ViewData["Title"] = "Home Page";
+        ViewData["Title"] = "Home Page";
     }
- 
+
     <center>
         <div>
 
-            <img class="banner-img shadowBox" src="https://notebookspec.com/web/wp-content/uploads/2021/05/callduty2021_3457653b.jpg"></img>
+            <img class="banner-img shadowBox"
+                src="https://notebookspec.com/web/wp-content/uploads/2021/05/callduty2021_3457653b.jpg"></img>
 
         </div>
     </center>
 
 
     <div class="layout-finder">
-        <div class="layout-finder-left"><h3>เกมลดราคา</h3></div>
+        <div class="layout-finder-left">
+            <h3>เกมลดราคา</h3>
+        </div>
         <div class="layout-finder-right">
-            <a asp-area="" style=" text-decoration: none;color:white;" asp-controller="Store" asp-action="Index"><h3>เรียกดู</h3></a>
+            <a asp-area="" style=" text-decoration: none;color:white;" asp-controller="Store" asp-action="Index">
+                <h3>เรียกดู</h3>
+            </a>
         </div>
     </div>
 
@@ -30,84 +35,71 @@
 
     <div class="card-view">
         <div class="wrapper-card">
-        <div class="card">
-            <img src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg">
-            <div class="card-context">
-                <h2 class="card-game-name">Minecraft</h2>
-                <h3 class="card-game-provider">Mojang</h3>
-                <div class="card-price-conetxt">
-                    <h3 class="price-discount">200 บาท</h3>
-                    <h2 class="price-static">155 บาท</h2>
+
+        <span id="blankItem">
+            </span>
+
+                <script>
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+ 
+        var data = JSON.parse(this.responseText)
+console.log(data)
+                     //Test loop value for generate div
+            var x = "", i;
+            
+            for (i = 0; i <data.length; i++) { 
+                x += `
+            <div class="card">
+                <a href="/Store/Game?game=`+data[i].name+`">
+                <img src="/img/img_main/`+data[i].main_Image+`">
+                 </a>
+                <div class="card-context">
+                    <h2 class="card-game-name">`+data[i].name+`</h2>
+                    <h3 class="card-game-provider">`+data[i].developer+`</h3>
+                    <div class="card-price-conetxt">
+                        <h3 class="price-discount">`+(data[i].price+350)+`</h3>
+                        <h2 class="price-static">`+data[i].price+`</h2>
+                    </div>
+                </div>
+                <div class="plat-card shadowBox">
                 </div>
             </div>
-            <div class="plat-card shadowBox">
-            </div>
+            `;
+            }
+            document.getElementById("blankItem").innerHTML = x;
+        
+          
+       }
+    };
+    xhttp.open("GET", "https://localhost:5001/RandomGame", true);
+    xhttp.send();
+}
+
+loadDoc();
+ 
+</script>
+ 
+
+
+
+
+
         </div>
 
-        <div class="card">
-            <img src="https://cdn1.epicgames.com/salesEvent/salesEvent/wwzAfterTall_1200x1600-b7b0af3e21961a57059ec4a3019e57fb">
-            <div class="card-context">
-                <h2 class="card-game-name">Warz</h2>
-                <h3 class="card-game-provider">Warz</h3>
-                <div class="card-price-conetxt">
-                    <h3 class="price-discount">200 บาท</h3>
-                    <h2 class="price-static">135 บาท</h2>
-                </div>
-            </div>
-            <div class="plat-card shadowBox">
-            </div>
-        </div>
 
-        <div class="card">
-            <img src="https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Battlefield2042_DICE_S2_1200x1600-331f59b6877d2bf2194943fcf7a68048">
-            <div class="card-context">
-                <h2 class="card-game-name">BattleFeild</h2>
-                <h3 class="card-game-provider">BattleFeild</h3>
-                <div class="card-price-conetxt">
-                    <h3 class="price-discount">350 บาท</h3>
-                    <h2 class="price-static">120 บาท</h2>
-                </div>
-            </div>
-            <div class="plat-card shadowBox">
-            </div>
-        </div>
 
-        <div class="card">
-            <img src="https://dyn.media.titanbooks.com/VHrEMCutcgg3MB_tFb0-1xoPZXw=/fit-in/600x600/https://media.titanbooks.com/catalog/products/7411/BATTLEFIELD_LTD-Ed-Book-cover.jpg">
-            <div class="card-context">
-                <h2 class="card-game-name">BattleFeild</h2>
-                <h3 class="card-game-provider">BattleFeild</h3>
-                <div class="card-price-conetxt">
-                    <h3 class="price-discount">350 บาท</h3>
-                    <h2 class="price-static">120 บาท</h2>
-                </div>
-            </div>
-            <div class="plat-card shadowBox">
-            </div>
-        </div>
 
-        <div class="card">
-            <img src="https://play-lh.googleusercontent.com/JRd05pyBH41qjgsJuWduRJpDeZG0Hnb0yjf2nWqO7VaGKL10-G5UIygxED-WNOc3pg">
-            <div class="card-context">
-                <h2 class="card-game-name">PUBG</h2>
-                <h3 class="card-game-provider">BATTLEGROUNDS</h3>
-                <div class="card-price-conetxt">
-                    <h3 class="price-discount">1234 บาท</h3>
-                    <h2 class="price-static">350 บาท</h2>
-                </div>
-            </div>
-            <div class="plat-card shadowBox">
-            </div>
-        </div>
 
-            </div>
     </div>
 
 
 
 
 
- 
- 
 
-    </div>
+
+
+</div>
