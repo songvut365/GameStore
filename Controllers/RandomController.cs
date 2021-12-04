@@ -23,17 +23,24 @@ namespace GameStore.Controllers
             _context = context;
         }
 
-            //เอาเกมส์มาแสดงแบบสุ่ม GET: /Random/
+            //เอาเกมส์มาแสดงแบบสุ่ม GET: /RandomGame/
         public async Task<IActionResult> Index()
         {
+      
+
             var game = await _context.Game.ToListAsync();
             var random = new Random();
             var gameList = new List<Game>();
-            for (int i = 0; i < 5; i++)
+            //เอาเกมส์มาแสดงแบบสุ่มแบบไม่ซ้ำ
+            while (gameList.Count < 5)
             {
                 var gameIndex = random.Next(game.Count);
-                gameList.Add(game[gameIndex]);
+                if (!gameList.Contains(game[gameIndex]))
+                {
+                    gameList.Add(game[gameIndex]);
+                }
             }
+
             return Json(gameList);
  
         }

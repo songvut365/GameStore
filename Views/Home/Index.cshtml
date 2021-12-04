@@ -53,7 +53,9 @@ console.log(data)
             for (i = 0; i <data.length; i++) { 
                 x += `
             <div class="card">
+                <a href="/Store/Game?game=`+data[i].name+`">
                 <img src="/img/img_main/`+data[i].main_Image+`">
+                 </a>
                 <div class="card-context">
                     <h2 class="card-game-name">`+data[i].name+`</h2>
                     <h3 class="card-game-provider">`+data[i].developer+`</h3>
