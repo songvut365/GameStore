@@ -158,7 +158,6 @@ margin-right:15px;
 #type #item-cat {
     background-color: #202020;
     width: 290px;
-    height: 520px;
     display: flex;
     flex-direction: column;
     border-radius: 4%;

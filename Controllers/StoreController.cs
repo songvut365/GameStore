@@ -27,15 +27,17 @@ namespace GameStore.Controllers
         }
 
     //แสดงสินค้าตามประเภทแบบไดนามิก GET: /Store/Type?name=Action
-    public IActionResult Type(string name)
+    public async Task<IActionResult> Type(string type)
     {
-      ViewData["Type"] = name;
+      ViewData["Type"] = type;
 
-      return View();
+    var game = await _context.Game.Where(g => g.Type == type).ToListAsync();
+
+      return View(game);
     }
 
 
-    //แดสงรายละเอียดของเกมนั้นๆ GET: /Store/Game?=CallOfDuty
+    //แดสงรายละเอียดของเกมนั้นๆ GET: /Store/Game?game=CallOfDuty
     public IActionResult Game(string name)
     {
       ViewData["Name"] = name;

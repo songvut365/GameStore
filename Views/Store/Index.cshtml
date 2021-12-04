@@ -15,32 +15,32 @@
     <div id="cart-wrapper">
 
         <div id="card-cat" class="shadowBox">
-            <a href='@Url.Action("type", "Store", new { name = "ผจญภัย" })'"> 
-            <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg"> </a>
+            <a href='@Url.Action("type", "Store", new { type = "ผจญภัย" })'"> 
+            <img class="shadowBox" src="/img/ผจญภัย.jpg"> </a>
             <div id="cat-label"><h3>ผจญภัย</h3></div>
         </div>
 
         <div id="card-cat" class="shadowBox">
-            <a href='@Url.Action("type", "Store", new { name = "แคชชวล" })'"> 
-            <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg"></a>
+            <a href='@Url.Action("type", "Store", new { type = "แคชชวล" })'"> 
+            <img class="shadowBox" src="/img/แคชชวล.jpg"></a>
             <div id="cat-label"><h3>แคชชวล</h3></div>
         </div>
 
         <div id="card-cat" class="shadowBox">
-            <a href='@Url.Action("type", "Store", new { name = "สยองขวัญ" })'"> 
-            <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg"></a>
+            <a href='@Url.Action("type", "Store", new { type = "สยองขวัญ" })'"> 
+            <img class="shadowBox" src="/img/สยองขวัญ.jpg"></a>
             <div id="cat-label"><h3>สยองขวัญ</h3></div>
         </div>
 
         <div id="card-cat" class="shadowBox">
-            <a href='@Url.Action("type", "Store", new { name = "อินดี้" })'"> 
-            <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg"></a>
+            <a href='@Url.Action("type", "Store", new { type = "แอคชั่น" })'"> 
+            <img class="shadowBox" src="/img/แอคชั่น.jpg"></a>
             <div id="cat-label"><h3>แอคชั่น</h3></div>
         </div>
 
         <div id="card-cat" class="shadowBox">
-            <a href='@Url.Action("type", "Store", new { name = "ปริศนา" })'"> 
-            <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg"></a>
+            <a href='@Url.Action("type", "Store", new { type = "โอเพนเวิลด์" })'"> 
+            <img class="shadowBox" src="/img/โอเพนเวิลด์.jpg"></a>
             <div id="cat-label"><h3>โอเพนเวิลด์</h3></div>
         </div>
 
@@ -56,9 +56,9 @@
  @foreach (var item in Model) {
 
                 <div id="item-cat" class="shadowBox">
-
-                    <img class="shadowBox" src="img/img_main/@item.Main_Image">
-
+<a href='@Url.Action("Game", "Store", new { game = @item.Name })'> 
+                    <img class="shadowBox" src="/img/img_main/@item.Main_Image"> 
+ </a>
                         <div id="item-sub-container">
                             <div id="item-label"><h2>@item.Name</h2><h3>@item.Developer</h3></div>
                             <div id="item-sub-label"><div><h3>@(item.Price+350)</h3></div><div><h1>@item.Price</h1></div></div>
