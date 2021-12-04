@@ -16,135 +16,134 @@
 @* ////////////////// FROM ZONE ////////////////// *@
 <form asp-action="Add" id="Added">
 @* ////////////////// LEFT BOX /////////////////// *@
-<div class="size-box">
-  <div class="float-box">
-    <div class="left-box">
+  <div class="size-box">
+    <div class="float-box">
+      <div class="left-box">
 
-        @*edit_youtube*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_youtube">Youtube</label>
+          @*edit_youtube*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_youtube">Youtube</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Youtube" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Youtube" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_mainpic*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_mainpic">รูปหลัก</label>
+          @*edit_mainpic*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_mainpic">รูปหลัก</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Main_Image" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Main_Image" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_pic_1*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_pic_1">รูปที่ 1</label>
+          @*edit_pic_1*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_pic_1">รูปที่ 1</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Image1" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Image1" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_pic_2*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_pic_2">รูปที่ 2</label>
+          @*edit_pic_2*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_pic_2">รูปที่ 2</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Image2" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Image2" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_pic_3*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_pic_3">รูปที่ 3</label>
+          @*edit_pic_3*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_pic_3">รูปที่ 3</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Image3" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Image3" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_game_name*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_game_name">ชื่อ</label>
+          @*edit_game_name*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_game_name">ชื่อ</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Name" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Name" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_game_dev*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_game_dev">ผู้พัฒนา</label>
+          @*edit_game_dev*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_game_dev">ผู้พัฒนา</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Developer" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Developer" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_game_cat*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_game_cat">หมวดหมู่</label>
+          @*edit_game_cat*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_game_cat">หมวดหมู่</label>
+            </div>
+            <div class="col-80">
+              <input asp-for="Type" class="input-box" />
+            </div>
           </div>
-          <div class="col-80">
-            <input asp-for="Type" class="input-box" />
-          </div>
-        </div>
 
-        @*edit_game_detail*@
-        <div class="row">
-          <div class="col-20">
-            <label for="edit_game_detail">รายละเอียด</label>
+          @*edit_game_detail*@
+          <div class="row">
+            <div class="col-20">
+              <label for="edit_game_detail">รายละเอียด</label>
+            </div>
+            <div class="col-80">
+              <textarea asp-for="Detail" class="input-box" style="height:180px"></textarea>
+            </div>
           </div>
-          <div class="col-80">
-            <textarea asp-for="Detail" class="input-box" style="height:180px"></textarea>
-          </div>
-        </div>
-        
-    </div>
-
+          
+      </div>
 @* ////////////////// RIGHT BOX ////////////////// *@
-    <div class="fixed-box">
-      <div class="right-box">
+      <div class="fixed-box">
+        <div class="right-box">
 
-          @*edit_price*@
-          <div class="row">
-            <div class="col-25">
-              <label for="edit_price">ราคา</label>
+            @*edit_price*@
+            <div class="row">
+              <div class="col-25">
+                <label for="edit_price">ราคา</label>
+              </div>
+              <div class="col-75">
+                <input asp-for="Price" class="input-box" />
+              </div>
             </div>
-            <div class="col-75">
-              <input asp-for="Price" class="input-box" />
-            </div>
-          </div>
 
-          @*edit_amount*@
-          <div class="row">
-            <div class="col-25">
-              <label for="edit_amount">จำนวน</label>
+            @*edit_amount*@
+            <div class="row">
+              <div class="col-25">
+                <label for="edit_amount">จำนวน</label>
+              </div>
+              <div class="col-75">
+                <input asp-for="Amount" class="input-box" />
+              </div>
             </div>
-            <div class="col-75">
-              <input asp-for="Amount" class="input-box" />
-            </div>
-          </div>
+
+        </div>
+
+        @*Button Submit Edit*@
+        <input type="submit" value="เพิ่มสินค้า" class="james_btn" />
 
       </div>
-
-      @*Button Submit Edit*@
-      <input type="submit" value="เพิ่มสินค้า" class="james_btn" />
-</form>
-
     </div>
   </div>
-</div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
