@@ -7,13 +7,14 @@ using System.Linq;
 using GameStore.Data;
 using GameStore.Models;
 using System.Collections.Generic;
-using System.Linq;
+using System;
+
 namespace GameStore.Controllers
 {
   public class Store : Controller
   {
 
-    private readonly  DBContext _context;
+        private readonly  DBContext _context;
 
             public Store(DBContext context)
         {

@@ -35,77 +35,62 @@
 
     <div class="card-view">
         <div class="wrapper-card">
-            <div class="card">
-                <img src="/img/img_main/COD.jpg">
-                <div class="card-context">
-                    <h2 class="card-game-name">Call of Duty</h2>
-                    <h3 class="card-game-provider">Sledgehammer Games</h3>
-                    <div class="card-price-conetxt">
-                        <h3 class="price-discount">2150 บาท</h3>
-                        <h2 class="price-static">1250 บาท</h2>
-                    </div>
-                </div>
-                <div class="plat-card shadowBox">
-                </div>
-            </div>
 
-            <div class="card">
-                <img src="/img/img_main/Minecraft.jpg">
-                <div class="card-context">
-                    <h2 class="card-game-name">Minecraft</h2>
-                    <h3 class="card-game-provider">Mojang</h3>
-                    <div class="card-price-conetxt">
-                        <h3 class="price-discount">859 บาท</h3>
-                        <h2 class="price-static">750 บาท</h2>
-                    </div>
-                </div>
-                <div class="plat-card shadowBox">
-                </div>
-            </div>
+        <span id="blankItem">
+            </span>
 
+                <script>
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+ 
+        var data = JSON.parse(this.responseText)
+console.log(data)
+                     //Test loop value for generate div
+            var x = "", i;
+            
+            for (i = 1; i < 5; i++) { 
+                x += `
             <div class="card">
-                <img src="/img/img_main/WWZ.jpg">
+                <img src="/img/img_main/`+data[i].main_Image+`">
                 <div class="card-context">
-                    <h2 class="card-game-name">World War Z</h2>
-                    <h3 class="card-game-provider">Saber Interactive</h3>
+                    <h2 class="card-game-name">`+data[i].name+`</h2>
+                    <h3 class="card-game-provider">`+data[i].developper+`</h3>
                     <div class="card-price-conetxt">
-                        <h3 class="price-discount">890 บาท</h3>
-                        <h2 class="price-static">639 บาท</h2>
+                        <h3 class="price-discount">`+(data[i].price+350)+`</h3>
+                        <h2 class="price-static">`+data[i].price+`</h2>
                     </div>
                 </div>
                 <div class="plat-card shadowBox">
                 </div>
             </div>
+            `;
+            }
+            document.getElementById("blankItem").innerHTML = x;
+        
+          
+       }
+    };
+    xhttp.open("GET", "https://localhost:5001/RandomGame", true);
+    xhttp.send();
+}
 
-            <div class="card">
-                <img src="/img/img_main/BF.jpg">
-                <div class="card-context">
-                    <h2 class="card-game-name">Battlefield 2042</h2>
-                    <h3 class="card-game-provider">Electronic Arts</h3>
-                    <div class="card-price-conetxt">
-                        <h3 class="price-discount">3999 บาท</h3>
-                        <h2 class="price-static">2250 บาท</h2>
-                    </div>
-                </div>
-                <div class="plat-card shadowBox">
-                </div>
-            </div>
+loadDoc();
+ 
+</script>
+ 
 
-            <div class="card">
-                <img src="/img/img_main/PUBG.jpg">
-                <div class="card-context">
-                    <h2 class="card-game-name">PUBG</h2>
-                    <h3 class="card-game-provider">PUBG Corporation</h3>
-                    <div class="card-price-conetxt">
-                        <h3 class="price-discount">1229 บาท</h3>
-                        <h2 class="price-static">399 บาท</h2>
-                    </div>
-                </div>
-                <div class="plat-card shadowBox">
-                </div>
-            </div>
+
+
+
 
         </div>
+
+
+
+
+
     </div>
 
 
