@@ -42,7 +42,8 @@ namespace GameStore.Controllers
     {
       ViewData["Name"] = name;
 
-    var game = await _context.Game.Where(g => g.Name == name).ToListAsync();
+          var game = _context.Game.Where(entity => entity.Name.ToLower().Contains(name.ToLower()))
+            .ToList();
 
       return View(game);
     }

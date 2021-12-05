@@ -32,16 +32,21 @@
         <div class="nav-right">
 
             <span>
-
-
-
-                <input class="input-search" placeholder="ค้นหา">
-                 <a asp-area="" style=" text-decoration: none;color:white;" asp-controller="Store" asp-action="Index">
-                <i class="fas fa-search input-search-img"></i></a>
-            </span> </a>
+                <input id="searchValue" class="input-search" placeholder="ค้นหา">
+                <i onclick="Search()" class="fas fa-search input-search-img"></i>   
+            </span> 
+<script>
+function Search(){
+var value = document.getElementById("searchValue").value;
+location.href = '@Url.Action("Search", "Store")?name=' + value;
+}
+</script>
+             <script>
+     var SearchText = document.getElementByID('searchValue').value;
+     </script>
             <a asp-area="" asp-controller="Cart" asp-action="Index"><i class="cart fas fa-shopping-cart"></i></a>
         </div>
-
+ 
     </div>
 
     <div class="view-container">
