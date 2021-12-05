@@ -1,31 +1,44 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GameStore</title>
     <link rel="stylesheet" href="~/css/site.css" />
     @RenderSection("css", false)
 </head>
+
 <body>
-   
+
     <div class="nav shadowBox">
         <span class="nav-brand"><i class="fas fa-gamepad"></i></span>
         <div class="nav-module">
-            <a class="nav-module-element" asp-area="" asp-controller="Home" asp-action="Index"><p>หน้าแรก</p></a>
-            <a class="nav-module-element" asp-area="" asp-controller="Store" asp-action="Index"><p>ทั้งหมด</p></a>
+            <a class="nav-module-element" asp-area="" asp-controller="Home" asp-action="Index">
+                <p>หน้าแรก</p>
+            </a>
+            <a class="nav-module-element" asp-area="" asp-controller="Store" asp-action="Index">
+                <p>ทั้งหมด</p>
+            </a>
 
 
         </div>
 
         <div class="nav-right">
+
             <span>
+
+
+
                 <input class="input-search" placeholder="ค้นหา">
-                <i class="fas fa-search input-search-img"></i>
-            </span>
+                 <a asp-area="" style=" text-decoration: none;color:white;" asp-controller="Store" asp-action="Index">
+                <i class="fas fa-search input-search-img"></i></a>
+            </span> </a>
             <a asp-area="" asp-controller="Cart" asp-action="Index"><i class="cart fas fa-shopping-cart"></i></a>
         </div>
 
@@ -50,4 +63,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
