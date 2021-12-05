@@ -41,7 +41,11 @@
             <script>
                 function Search() {
                     var value = document.getElementById("searchValue").value;
-                    location.href = '@Url.Action("Search", "Store")?name=' + value;
+                    //if value is not empty
+                    if (value != "") {
+                       location.href = '@Url.Action("Search", "Store")?name=' + value;
+                    }
+                    
                 }
             </script>
             <script>
