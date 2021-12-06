@@ -20,7 +20,7 @@ label {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .right-box {
- height:87%;
+ height:89%;
 }
 
 /* Adjust size and center */
@@ -61,9 +61,13 @@ label {
   margin-top: 6px;
 }
 
-/* Fix textarea size */
+/* Fix textarea size and hide scrollbar*/
+.input-box::-webkit-scrollbar {
+  display: none;
+}
 textarea {
    resize: none;
+   
 }
 
 /* Clear floats after the columns */

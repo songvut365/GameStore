@@ -6,10 +6,12 @@
   <link rel="Stylesheet" href="@Href("~/css/Sek.css")">
 }
 
-@model List<GameStore.Models.Order>
-    
+
+
 <div id="list">
     <h1>List Stock</h1>
+
+    <!-- เดี๋ยวค่อย foreach ออกมา ในก้อนนี้-->
     <div class="container">
         <!--ดึงรูปของ game มาแสดง -->
         <div class="cover">
@@ -31,7 +33,7 @@
 
             <!--//ส่ง id ของตัวที่จะ edit-->
             <div class="edit-store">
-                <a href="/Management/Edit"><button>แก้ไข</button></a>
+                <a href="/Management/Edit?id=1"><button>แก้ไข</button></a>
             </div>
 
             <!--//ส่ง id ตัวที่จะลบ-->
@@ -55,7 +57,7 @@
 
             </div>
             <div class="edit-store">
-                <button>แก้ไข</button>
+                <a href="/Management/Edit?id=2"><button>แก้ไข</button></a>
             </div>
             <div class="del-store">
                 <button>ลบ</button>
