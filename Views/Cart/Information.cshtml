@@ -11,6 +11,7 @@
 <div id="information">
   <h1>ข้อมูลการสั่งซื้อ</h1>
 
+  <form asp-action="Create">
   @* Payment *@
   <div class="payment">
     @* Credit Cart *@
@@ -72,10 +73,10 @@
     </div>
 
     <div class="right-menu">
-      <button class="accept-btn"  onclick="location.href='@Url.Action("Success", "Cart")'">
+      <button class="accept-btn" type="submit" >
         สั่งซื้อ
       </button>
     </div>
   </div>
-
+  </form>
 </div>
