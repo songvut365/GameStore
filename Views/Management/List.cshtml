@@ -6,24 +6,35 @@
   <link rel="Stylesheet" href="@Href("~/css/Sek.css")">
 }
 
+@model List<GameStore.Models.Order>
+    
 <div id="list">
     <h1>List Stock</h1>
     <div class="container">
+        <!--ดึงรูปของ game มาแสดง -->
         <div class="cover">
             <img src="https://upload.wikimedia.org/wikinews/en/7/7a/Minecraft_game_cover.jpeg" alt="minecraft">
         </div>
         <div class="group-text">
+
+            <!--//รับ name ของ game มาแสดง-->
             <div class="game-name">
                 <p>MINECRAFT</p>
             </div>
+
+            <!--//รับค่า remain มาแสดง-->
             <div class="game-remain">
                 
                 <p class="remain-quantity">จำนวนคงเหลือ : 1</p>
                 
             </div>
+
+            <!--//ส่ง id ของตัวที่จะ edit-->
             <div class="edit-store">
-                <button>แก้ไข</button>
+                <a href="/Management/Edit"><button>แก้ไข</button></a>
             </div>
+
+            <!--//ส่ง id ตัวที่จะลบ-->
             <div class="del-store">
                 <button>ลบ</button>
             </div>
@@ -54,7 +65,7 @@
 
     
     <div class="add-store">
-        <button>+</button>
+        <a href ="/Management/Add"><button>+</button></a>
     </div>
     
 

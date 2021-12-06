@@ -6,6 +6,9 @@
   <link rel="Stylesheet" href="@Href("~/css/Sek.css")">
 }
 
+@model List<GameStore.Models.Order>
+
+
 <div id="order">
     <h2>ข้อมูลคำสั่งซื้อ</h2>
     
@@ -28,24 +31,29 @@
             <p>sum-price</p>
         </div>
     </div>
-    <div class="container">
+
+    @foreach (var item in Model)
+    {
+        <div class="container">
         <div class="game-name">
-            <p>MINECRAFT</p>
+            <p>Game ID: @item.Game_Id</p>
         </div>
         <div class="customer-name">
-            <p>สานตอก อะสะบะละ</p>
+            <p>@item.Name @item.LastName</p>
         </div>
         <div class="customer-email">
 
-            <p>asabara@kmitl.ac.th</p>
+            <p>@item.Email</p>
 
         </div>
         <div class="quantity">
-            <p>จำนวน : 1</p>
+            <p>จำนวน : @item.Game_Amount</p>
         </div>
         <div class="sum-price">
-            <p>155 บาท</p>
+            <p>@item.Price_Total บาท</p>
         </div>
     </div>
+    }
+    
 
 </div>
