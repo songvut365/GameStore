@@ -56,7 +56,7 @@
  @foreach (var item in Model) {
 
                 <div id="item-cat" class="shadowBox">
-<a href='@Url.Action("Game", "Store", new { game = @item.Name })'> 
+<a href="/Store/Game?id=@item.Id">
                     <img class="shadowBox" src="/img/img_main/@item.Main_Image"> 
  </a>
                         <div id="item-sub-container">
