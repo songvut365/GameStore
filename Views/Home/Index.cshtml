@@ -74,7 +74,9 @@ console.log(data)
           
        }
     };
-    xhttp.open("GET", "https://localhost:5001/RandomGame", true);
+    var url = window.location.href;
+    xhttp.open("GET", url + "RandomGame", true);
+
     xhttp.send();
 }
 
