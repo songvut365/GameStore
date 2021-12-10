@@ -80,6 +80,7 @@ body {
     -webkit-text-stroke-color: white;
     margin-left: 20px;
     margin-right: 25px;
+    color: white;
 }
 
 .footer {
@@ -228,3 +229,5 @@ img {
     z-index: -1;
     opacity: 0.3;
   }
+
+ 
