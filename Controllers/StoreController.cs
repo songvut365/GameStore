@@ -40,7 +40,7 @@ namespace GameStore.Controllers
         //แสดงสินค้าตามการค้นหา GET: /Store/Search?name=Action
     public async Task<IActionResult> Search(string name)
     {
-      ViewData["Name"] = name;
+      ViewData["search"] = name;
 
           var game = _context.Game.Where(entity => entity.Name.ToLower().Contains(name.ToLower()))
             .ToList();
