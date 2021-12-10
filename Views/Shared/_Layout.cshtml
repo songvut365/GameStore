@@ -64,7 +64,7 @@
 
                 try {
                     var SearchText = document.getElementByID('searchValue').value;
-                }catch(err){
+                } catch (err) {
                     console.log("Management Page Detect. Search Bar hide !!");
                 }
 
@@ -80,17 +80,21 @@
         //geturl
         var url = window.location.href;
         var urlSplit = url.split('/');
-        var urlLast = urlSplit[3];
-        var managementPage = urlSplit[4];
         console.log(urlSplit);
-        // if Management dont show navbar
-        if (urlLast == "Management") {
+        //if urlSplit have Management
+        if (urlSplit.includes("Management")) {
             document.getElementById("navbarLeft").style.display = "none";
             document.getElementById("navbarRight").style.display = "none";
         }
-        if ( urlLast == "Management" && managementPage.length >= 3 ) {
+        if ((urlSplit.includes("Management", "Add"))||(urlSplit.includes("Management", "List")) || (urlSplit.includes("Management", "Edit")) || (urlSplit.includes("Management", "List")) || (urlSplit.includes("Management", "Order"))) {
             document.getElementById("navbarLeftManagement").style.display = "block";
         }
+        if(!((urlSplit.includes("Add"))||(urlSplit.includes("List")) || (urlSplit.includes("Edit")) || (urlSplit.includes("List")) || (urlSplit.includes("Order")))){
+            document.getElementById("navbarLeftManagement").style.display = "none";
+        }
+
+
+
     </script>
 
     <div class="view-container">
