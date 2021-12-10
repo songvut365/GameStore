@@ -86,16 +86,20 @@
             document.getElementById("navbarLeft").style.display = "none";
             document.getElementById("navbarRight").style.display = "none";
         }
-        if ((urlSplit.includes("Management", "Add"))||(urlSplit.includes("Management", "List")) || (urlSplit.includes("Management", "Edit")) || (urlSplit.includes("Management", "List")) || (urlSplit.includes("Management", "Order"))) {
+        if ((urlSplit.includes("Management", "Add")) || (urlSplit.includes("Management", "List")) || (urlSplit.includes("Management", "Edit")) || (urlSplit.includes("Management", "List")) || (urlSplit.includes("Management", "Order"))) {
             document.getElementById("navbarLeftManagement").style.display = "block";
         }
-        if(!((urlSplit.includes("Add"))||(urlSplit.includes("List")) || (urlSplit.includes("Edit")) || (urlSplit.includes("List")) || (urlSplit.includes("Order")))){
+        if (!((urlSplit.includes("Add")) || (urlSplit.includes("List")) || (urlSplit.includes("Edit")) || (urlSplit.includes("List")) || (urlSplit.includes("Order")))) {
             document.getElementById("navbarLeftManagement").style.display = "none";
         }
 
 
 
     </script>
+
+    <video autoplay muted loop id="myVideo">
+         <source src="~/video/bg.webm" type="video/webm" />
+    </video>
 
     <div class="view-container">
 

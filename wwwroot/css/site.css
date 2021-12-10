@@ -213,6 +213,18 @@ img {
 
 .view-container {
     margin: 35px 35px 150px 35px;
+    position: relative;
+    z-index: 0;
 }
 
- 
+
+#myVideo {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.3;
+  }
