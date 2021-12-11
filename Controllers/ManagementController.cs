@@ -114,7 +114,7 @@ namespace GameStore.Controllers
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("Id,Youtube,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount")] Game game)
+    public async Task<IActionResult> Edit(int id, [Bind("Id,Youtube,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount,img")] Game game , IFormFile[] img)
     {
         if (id != game.Id)
         {
@@ -126,6 +126,15 @@ namespace GameStore.Controllers
             try
             {
                 _context.Update(game);
+                try {
+                    await UploadFile(img[0],"img_main", game.Main_Image);
+                    await UploadFile(img[1],"img_1", game.Image1);
+                    await UploadFile(img[2],"img_2", game.Image2);
+                    await UploadFile(img[3],"img_3", game.Image3);    
+                }
+                catch
+                { }
+                    
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
