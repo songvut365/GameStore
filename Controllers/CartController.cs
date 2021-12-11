@@ -115,8 +115,8 @@ namespace GameStore.Controllers
 
         //mail body
         var mailBody = new StringBuilder();
-        mailBody.AppendLine("<div style='font-family: Arial, Helvetica, sans-serif; width: 700px;'>");
-        mailBody.AppendLine("<h1 style='margin:0; padding:0;'>Game Store</h1><p>ขอบคุณที่ใช้บริการ Game Store คุณสามารถนำ CD-Key ไปลงทะเบียนได้ตามผู้ให้บริการที่คุณต้องการ หากคุณมีคำถามโปรดติดต่อ Call Center</p>");
+        mailBody.AppendLine("<div style='font-family: Arial, Helvetica, sans-serif; width: 700px; padding: 1rem; border: 1px solid #212121; border-radius: 8px;'>");
+        mailBody.AppendLine("<h1 style='margin:0; padding:0; color: #212121;'>Game Store</h1><p style='color: #212121;'>ขอบคุณที่ใช้บริการ Game Store คุณสามารถนำ CD-Key ไปลงทะเบียนได้ตามผู้ให้บริการที่คุณต้องการ หากคุณมีคำถามโปรดติดต่อ Call Center</p>");
         mailBody.AppendLine("<div><table style='border: 1px solid #212121; margin-bottom: 1rem; width: 49%; float: left;'>");
         mailBody.AppendLine("<tr style='background-color: #212121; color: white;'><th>Billing Information</th></tr>");
         mailBody.AppendLine($"<tr><td>ชื่อ: {order.Name +' '+order.LastName}</td></tr><tr><td>เบอร์โทร: {order.Phone}</td></tr><tr><td>อีเมล: {order.Email}</td></tr>");
