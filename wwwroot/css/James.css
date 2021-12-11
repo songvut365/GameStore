@@ -12,6 +12,13 @@ label {
   padding: 7px 12px 12px 0;
   display: inline-block;
 }
+
+span {
+  color: rgb(255, 0, 0);
+  padding: 7px 12px 12px 0;
+  display: inline-block;
+}
+
 .left-box, .right-box {
   flex: 1;
   padding: 1rem 2rem 1rem 2rem;
@@ -20,7 +27,7 @@ label {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .right-box {
- height:87%;
+ height:89%;
 }
 
 /* Adjust size and center */
@@ -50,20 +57,36 @@ label {
   width: 75%;
   margin-top: 6px;
 }
-.col-20 {
+.col-label {
   float: left;
-  width: 20%;
+  width: 10%;
   margin-top: 6px;
 }
-.col-80 {
+
+.col-input {
   float: left;
+  width: 90%;
+  margin-top: 6px;
+}
+
+.col-input-img {
+  float: right;
   width: 80%;
   margin-top: 6px;
 }
 
-/* Fix textarea size */
+.col-upload {
+  float: left;
+  width: 10%;
+  margin-top: 6px;
+}
+/* Fix textarea size and hide scrollbar*/
+.input-box::-webkit-scrollbar {
+  display: none;
+}
 textarea {
    resize: none;
+   
 }
 
 /* Clear floats after the columns */
@@ -89,6 +112,21 @@ textarea {
 }
 
 /*/////////////////////// Button //////////////////////*/
+.upload_btn{
+  background-color: #269c59;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#file-chosen{
+  margin-left: 0.3rem;
+  font-family: sans-serif;
+}
+
 /* ปุ่มกด Cr.Songvut */
 .james_btn {
   width: 200px;
@@ -117,8 +155,8 @@ textarea {
 }
 /*/////////////////////////////////////////////////////*/
 
-/* responsive เมื่อกว้างน้อยกว่า 1100px Cr.Songvut */
-@media (max-width: 1100px) {
+/* responsive เมื่อกว้างน้อยกว่า 1360px Cr.Songvut */
+@media (max-width: 1360px) {
   .float-box { flex-direction: column; }
   .left-box, .right-box {
     width: 100%;
@@ -128,6 +166,6 @@ textarea {
     margin-top: 15px;
   }
   .james_btn{ width: 100%; }
-  .col-20 { width: 25%; }
-  .col-80 { width: 75%; }
+  .col-25 { width: 10%; }
+  .col-75 { width: 90%; }
 }
