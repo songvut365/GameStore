@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using GameStore.Data;
 using GameStore.Models;
 
+using Microsoft.AspNetCore.Http;
+using System.IO;
+
 namespace GameStore.Controllers
 {
   public class ManagementController : Controller
@@ -38,6 +41,41 @@ namespace GameStore.Controllers
     }
 
 
+    [HttpPost]
+    public async Task<ActionResult> FileUpload(IFormFile file)
+    {
+        await UploadFile(file);
+        TempData["msg"] = "File Uploaded successfully.";
+        return View();
+    }
+    // Upload file on server
+    public async Task<bool> UploadFile(IFormFile file)
+    {
+        string path = "";
+        bool iscopied = false;
+        try
+        {
+            if (file.Length>0)
+            {
+                string filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img"));
+                using (var filestream = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
+                {
+                    await file.CopyToAsync(filestream);
+                }
+                iscopied = true;
+            }
+            else
+            {
+                iscopied = false;
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        return iscopied;
+    }
 
     //เพิ่มสินค้าในสต๊อก GET: /Management/Add/ 
     public IActionResult Add()
