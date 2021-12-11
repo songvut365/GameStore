@@ -14,7 +14,7 @@
 </div> 
 
 @* ////////////////// FROM ZONE ////////////////// *@
-<form asp-action="Add" id="Added">
+<form method="post" enctype="multipart/form-data" asp-controller="Management" asp-action="Add">
 @* ////////////////// LEFT BOX /////////////////// *@
   <div class="size-box">
     <div class="float-box">
@@ -37,6 +37,7 @@
             </div>
             <div class="col-80">
               <input asp-for="Main_Image" class="input-box" />
+              <input type="file" name="file" />
             </div>
           </div>
 
@@ -145,7 +146,7 @@
   </div>
 </form>
 
-<form method="post" enctype="multipart/form-data" asp-controller="Management" asp-action="FileUpload">
+<form method="post" enctype="multipart/form-data" asp-controller="Management" asp-action="Add">
     <div class="form-group">
         <div class="col-md-10">
             <p>Upload File</p>
