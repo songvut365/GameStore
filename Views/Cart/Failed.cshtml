@@ -1,0 +1,21 @@
+@{
+  ViewData["Title"] = "Error";
+}
+
+@section css {
+  <link rel="Stylesheet" href="@Href("~/css/Not.css")">
+}
+
+<div id="success">
+  <div class="success-box">
+    <span class="icon-error">
+      <i class="fas fa-times"></i>
+    </span>
+    <p class="text">พบข้อผิดพลาด</p>
+    <p class="sub-text">สั่งซื้อไม่สำเร็จ</p>
+  </div><br>
+
+  <button class="error-btn" onclick="location.href='@Url.Action("Index", "Home")'">
+    กลับ
+  </button>
+</div>

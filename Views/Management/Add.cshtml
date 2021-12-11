@@ -1,3 +1,5 @@
+@model GameStore.Models.Game
+
 @{
   ViewData["Title"] = "Add Stock";
 }
@@ -11,123 +13,177 @@
   <h2>เพิ่มสินค้า</h2>
 </div> 
 
-<div class="size-box">
-  <div class="float-box">
-    <div class="left-box">
-      <form>
+@* ////////////////// FROM ZONE ////////////////// *@
+<form method="post" enctype="multipart/form-data" asp-controller="Management" asp-action="Add">
+@* ////////////////// LEFT BOX /////////////////// *@
+  <div class="size-box">
+    <div class="float-box">
+      <div class="left-box">
 
-        @*add_mainpic*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_mainpic">รูปหลัก</label>
-          </div>
-          <div class="col-80">
-            <input class="input-box" type="text" id="add_mainpic" placeholder="image.jpg">
-          </div>
-        </div>
-
-        @*add_pic_1*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_pic_1">รูปที่ 1</label>
-          </div>
-          <div class="col-80">
-            <input class="input-box" type="text" id="add_pic_1" placeholder="image1.png">
-          </div>
-        </div>
-
-        @*add_pic_2*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_pic_2">รูปที่ 2</label>
-          </div>
-          <div class="col-80">
-            <input class="input-box" type="text" id="add_pic_2" placeholder="image2.png">
-          </div>
-        </div>
-
-        @*add_pic_3*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_pic_3">รูปที่ 3</label>
-          </div>
-          <div class="col-80">
-            <input class="input-box" type="text" id="add_pic_3" placeholder="image3.png">
-          </div>
-        </div>
-
-        @*add_game_name*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_game_name">ชื่อ</label>
-          </div>
-          <div class="col-80">
-            <input class="input-box" type="text" id="add_game_name" placeholder="มานคาฟ">
-          </div>
-        </div>
-
-        @*add_game_dev*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_game_dev">ผู้พัฒนา</label>
-          </div>
-          <div class="col-80">
-            <input class="input-box" type="text" id="add_game_dev" placeholder="Mojang">
-          </div>
-        </div>
-
-        @*add_game_cat*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_game_cat">หมวดหมู่</label>
-          </div>
-          <div class="col-80">
-            <input class="input-box" type="text" id="add_game_cat" placeholder="Drama">
-          </div>
-        </div>
-
-        @*add_game_detail*@
-        <div class="row">
-          <div class="col-20">
-            <label for="add_game_detail">รายละเอียด</label>
-          </div>
-          <div class="col-80">
-            <textarea class="input-box" type="text" id="add_game_detail" placeholder="สุดยอดเกม sci-fi, action, drama,RPG, FPS, Strategy แห่งทศวรรษ โปรดเพิ่มกับฉันแบบสัตว์" style="height:150px"></textarea>
-          </div>
-        </div>
-
-      </form>
-    </div>
-
-    <div class="fixed-box">
-      <div class="right-box">
-        <form>
-
-          @*add_price*@
+          @*add_youtube*@
           <div class="row">
-            <div class="col-25">
-              <label for="add_price">ราคา</label>
+            <div class="col-label">
+              <label for="add_youtube">Youtube</label>
             </div>
-            <div class="col-75">
-              <input class="input-box" type="text" id="add_price" placeholder="355">
+            <div class="col-input">
+              <input asp-for="Youtube" class="input-box" />
             </div>
           </div>
 
-          @*add_amount*@
+          @*add_mainpic*@
           <div class="row">
-            <div class="col-25">
-              <label for="add_amount">จำนวน</label>
+            <div class="col-label">
+              <label for="add_mainpic">รูปหลัก</label>
             </div>
-            <div class="col-75">
-              <input class="input-box" type="text" id="add_amount" placeholder="4">
+            <div class="col-input-img">
+              <input asp-for="Main_Image" class="input-box" id="main_img" />
+            </div>
+            <div class="col-upload">
+              <input type="file" name="img" class="upload_btn" id="btn_main_img" hidden/>
+              <label for="btn_main_img" class="upload_btn" >เลือกรูป</label>
             </div>
           </div>
 
-        </form>
+          @*add_pic_1*@
+          <div class="row">
+            <div class="col-label">
+              <label for="add_pic_1">รูปที่ 1</label>
+            </div>
+            <div class="col-input-img">
+              <input asp-for="Image1" class="input-box" id="img_1" />
+            </div>
+            <div class="col-upload">
+              <input type="file" name="img" class="upload_btn" id="btn_img_1" hidden/>
+              <label for="btn_img_1" class="upload_btn" >เลือกรูป</label>
+            </div>
+          </div>
+
+          @*add_pic_2*@
+          <div class="row">
+            <div class="col-label">
+              <label for="add_pic_2">รูปที่ 2</label>
+            </div>
+            <div class="col-input-img">
+              <input asp-for="Image2" class="input-box" id="img_2" />
+            </div>
+            <div class="col-upload">
+              <input type="file" name="img" class="upload_btn" id="btn_img_2" hidden/>
+              <label for="btn_img_2" class="upload_btn" >เลือกรูป</label>
+            </div>
+          </div>
+
+          @*add_pic_3*@
+          <div class="row">
+            <div class="col-label">
+              <label for="add_pic_3">รูปที่ 3</label>
+            </div>
+            <div class="col-input-img">
+              <input asp-for="Image3" class="input-box" id="img_3" />
+            </div>
+            <div class="col-upload">
+              <input type="file" name="img" class="upload_btn" id="btn_img_3" hidden/>
+              <label for="btn_img_3" class="upload_btn" >เลือกรูป</label>
+            </div>
+          </div>
+
+          @*add_game_name*@
+          <div class="row">
+            <div class="col-label">
+              <label for="add_game_name">ชื่อ</label>
+            </div>
+            <div class="col-input">
+              <input asp-for="Name" class="input-box" />
+            </div>
+          </div>
+
+          @*add_game_dev*@
+          <div class="row">
+            <div class="col-label">
+              <label for="add_game_dev">ผู้พัฒนา</label>
+            </div>
+            <div class="col-input">
+              <input asp-for="Developer" class="input-box" />
+            </div>
+          </div>
+
+          @*add_game_cat*@
+          <div class="row">
+            <div class="col-label">
+              <label for="add_game_cat">หมวดหมู่</label>
+            </div>
+            <div class="col-input">
+              <input asp-for="Type" class="input-box" />
+            </div>
+          </div>
+
+          @*add_game_detail*@
+          <div class="row">
+            <div class="col-label">
+              <label for="add_game_detail">รายละเอียด</label>
+            </div>
+            <div class="col-input">
+              <textarea asp-for="Detail" class="input-box" style="height:180px"></textarea>
+            </div>
+          </div>
+          
       </div>
+@* ////////////////// RIGHT BOX ////////////////// *@
+      <div class="fixed-box">
+        <div class="right-box">
 
-      <button class="james_btn" id="add_item">เพิ่มสินค้า</button>
+            @*add_price*@
+            <div class="row">
+              <div class="col-25">
+                <label for="add_price">ราคา</label>
+              </div>
+              <div class="col-75">
+                <input asp-for="Price" class="input-box" />
+              </div>
+            </div>
 
+            @*add_amount*@
+            <div class="row">
+              <div class="col-25">
+                <label for="add_amount">จำนวน</label>
+              </div>
+              <div class="col-75">
+                <input asp-for="Amount" class="input-box" />
+              </div>
+            </div>
+
+        <span>@TempData["msg"]</span>
+
+        </div>
+
+        @*Button Submit add*@
+        <input type="submit" value="เพิ่มสินค้า" class="james_btn" />
+
+      </div>
     </div>
   </div>
-</div>
+</form>
+
+<script>
+
+  const main_img = document.getElementById('btn_main_img');
+  const btn_img_1 = document.getElementById('btn_img_1');
+  const btn_img_2 = document.getElementById('btn_img_2');
+  const btn_img_3 = document.getElementById('btn_img_3');
+
+  main_img.addEventListener('change', function(){
+    document.getElementById("main_img").value = this.files[0].name;})
+
+  btn_img_1.addEventListener('change', function(){
+    document.getElementById("img_1").value = this.files[0].name;})
+
+  btn_img_2.addEventListener('change', function(){
+    document.getElementById("img_2").value = this.files[0].name;})
+
+  btn_img_3.addEventListener('change', function(){
+    document.getElementById("img_3").value = this.files[0].name;})
+
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

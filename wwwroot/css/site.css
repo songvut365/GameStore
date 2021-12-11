@@ -52,9 +52,11 @@ body {
 }
 
 .input-search {
-    border: 0px;
+    border: 2px;
+    width: 230px;
     margin-top: 10px;
-    height: 25px;
+    height: 30px;
+    border-radius: 4%;
 }
 
 .input-search-img {
@@ -78,6 +80,7 @@ body {
     -webkit-text-stroke-color: white;
     margin-left: 20px;
     margin-right: 25px;
+    color: white;
 }
 
 .footer {
@@ -104,31 +107,15 @@ body {
     margin-top: 15px;
 }
 
-
-
-.banner-img {
-    width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    display:block;
-}
-
-@media only screen and (max-width: 1100px) {
-    .banner-img {
-        width: 100%;
-    }
-}
-
-
-img {
-    border-radius: 2%;
-}
-
 .layout-finder {
     color: white;
     margin-inline: 120px;
     text-align: center;
     display: flex;
+    width: 950px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .layout-finder-right {
@@ -140,6 +127,65 @@ img {
     float:left;
 
 }
+
+.banner-img {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .layout-finder {
+        color: white;
+        margin-inline: 120px;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        margin-top: 35px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .banner-img {
+        width: 100%;
+    }
+ 
+
+}
+
+ 
+ 
+
+@media only screen and (max-width: 500px) {
+    .layout-finder-right {
+        float: none;
+       align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        order: 1;
+    }
+    
+    .layout-finder-left {
+        margin-top: 25px;
+        float: none;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        order: 2;
+    
+    }
+
+}
+
+
+img {
+    border-radius: 2%;
+}
+
+
 
 
 .card-view {
@@ -158,9 +204,6 @@ img {
 }
 
     .card img {
-        object-fit: none; /* Do not scale the image */
-        object-position: center; /* Center the image within the element */
-        height: 400px;
         width: 250px;
     }
 
@@ -193,6 +236,7 @@ img {
     color: white;
     margin-top: 0px;
     text-align: left;
+    font-size: 100%;
 }
 
 .card-game-provider {
@@ -213,6 +257,20 @@ img {
 
 .view-container {
     margin: 35px 35px 150px 35px;
+    position: relative;
+    z-index: 0;
 }
+
+
+#myVideo {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.3;
+  }
 
  

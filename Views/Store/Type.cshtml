@@ -27,28 +27,18 @@
             -->
 
 
+ @foreach (var item in Model) {
 
-        <script>
-            //Test loop value for generate div
-            var x = "", i;
-            data = ['minecraft', 'pubg', 'COD', 'BF','LOL']
-            for (i = 1; i < 5; i++) { 
-                x += `
                 <div id="item-cat" class="shadowBox">
-
-                    <img class="shadowBox" src="https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-edition-pc-game-microsoft-store-cover.jpg">
-
+<a href="/Store/Game?id=@item.Id">
+                    <img class="shadowBox" src="/img/img_main/@item.Main_Image"> 
+ </a>
                         <div id="item-sub-container">
-
-                            <div id="item-label"><h2>`+ data[i]+' @ViewData["type"]' + `</h2><h3>Mojang</h3></div>
-                            <div id="item-sub-label"><div><h3>200 บาท</h3></div><div><h1>150 บาท</h1></div></div>
+                            <div id="item-label"><h2>@item.Name</h2><h3>@item.Developer</h3></div>
+                            <div id="item-sub-label"><div><h3>@(item.Price+350)</h3></div><div><h1>@item.Price</h1></div></div>
                         </div>
                 </div>
-            `;
-            }
-            document.getElementById("item-wrapper").innerHTML = x;
-        </script>
 
-
+ }
     </div>
 </div>

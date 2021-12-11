@@ -1,117 +1,75 @@
+@using System.Collections.Generic;
+
 @{
   ViewData["Title"] = "Cart";
+
+  Dictionary<Game, Cart> carts = Model;
+  decimal totalPrice = 0;
+  foreach((Game game, Cart cart) in carts) {
+    totalPrice += cart.totalPrice;
+  }
 }
 
 @section css {
   <link rel="Stylesheet" href="@Href("~/css/Not.css")">
 }
 
+
 <div id="cart">
   <h1>ตะกร้าสินค้า</h1>
 
-  @* Game List in Cart *@
-  <div class="container">
-    <div class="cover">
-      <img src="https://upload.wikimedia.org/wikinews/en/7/7a/Minecraft_game_cover.jpeg" alt="minecraft" >
-    </div>
-    <div class="game-name">
-      <p>MINECRAFT</p>
-    </div>
-    <div class="game-action">
-      <button>-</button>
-      <p class="game-quantity">1</p>
-      <button>+</button>
-    </div>
-    <div class="game-price">
-      <p >155 บาท</p>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="cover">
-      <img src="https://static.wikia.nocookie.net/battlefield/images/7/7d/Battlefield_2042_Gold_Edition_Cover.jpg" alt="minecraft" >
-    </div>
-    <div class="game-name">
-      <p>BATTLE FIELD 2042</p>
-    </div>
-    <div class="game-action">
-      <button>-</button>
-      <p class="game-quantity">1</p>
-      <button>+</button>
-    </div>
-    <div class="game-price">
-      <p >1,590 บาท</p>
-    </div>
-  </div>
-
-  @* Payment *@
-  <div class="payment">
-    @* Credit Cart *@
-    <div class="credit-card">
-      <center><h2>ข้อมูลการชำระเงิน</h2></center>
-
-      <div class="card-number-input">
-        <label for="card-number">Card Number:</label><br>
-        <input class="input-box" type="text" id="card-number" placeholder="ตัวอย่าง: 0123XXXXXXXXXXXX">
+  @{
+    System.Console.WriteLine(carts);
+    if(carts.Count() == 0) {
+      <div class="empty-container">
+        <center><p>ไม่มีสินค้าในตะกร้า</p></center>
       </div>
-      <br>
-      
-      <div class="exp-cvc">
-        <div class="first-input">
-          <label for="exp">EXP:</label><br>
-          <input class="input-box" type="text" id="exp" placeholder="ตัวอย่าง: MM/YY">
+    }
+  
+    else {
+      @* Game List in Cart *@
+      @foreach ((Game game, Cart cart) in carts) {
+        <div class="container">
+          <div class="cover">
+            <img src="img/img_main/@game.Main_Image" alt="@game.Name" >
+          </div>
+          <div class="game-name">
+            <p>@game.Name</p>
+          </div>
+          <div class="game-action">
+            <button class="cart-btn" id="addto-cart"> @Html.ActionLink("-", "RemoveFromCart", "Cart", new {id = @cart.gameId}, "")</button>
+            <p class="game-quantity">@cart.count</p>
+            <button class="cart-btn" id="addto-cart"> @Html.ActionLink("+", "AddToCart", "Cart", new {id = @cart.gameId}, "")</button>
+          </div>
+          <div class="game-price">
+            <p >@cart.totalPrice บาท</p>
+          </div>
         </div>
-        <div class="second-input">
-          <label for="cvc">CVC:</label><br>
-          <input class="input-box" type="text" id="cvc" placeholder="ตัวอย่าง: 123">
+      }
+
+      @* Footer menu *@
+      <div class="footer-menu">
+        <div class="left-menu">
+          <button class="back-btn" onclick="location.href='@Url.Action("Index", "Home")'">
+            <i class="fas fa-chevron-left"></i>
+            กลับ
+          </button>
+        </div>
+
+        <div class="right-menu">
+          <div class="total">
+            <h1>ราคารวม : </h1><h1 id="price_total">@totalPrice</h1><h1> บาท</h1>
+          </div>
+          <button class="accept-btn" onclick="location.href='@Url.Action("Information", "Cart")'">
+            ถัดไป
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
-
-    </div>
-
-    @* Information *@
-    <div class="information">
-      <center><h2>ข้อมูลลูกค้า</center>
-      <div class="fname-lname">
-        <div class="first-input">
-          <label for="fname">ชื่อ:</label><br>
-          <input class="input-box" type="text" id="fname" placeholder="ตัวอย่าง: นายสมชาย">
-        </div>
-        <div class="second-input">
-          <label for="lname">นามสกุล:</label><br>
-          <input class="input-box" type="text" id="lname" placeholder="ตัวอย่าง: ใจดี">
-        </div>
-      </div><br>
-      
-      <div class="tel-box">
-        <label for="tel">เบอร์โทร:</label><br>
-        <input class="input-box" type="tel" id="tel" placeholder="ตัวอย่าง: 0812345678">
-      </div><br>
-
-      <div class="mail-box">
-        <label for="email">อีเมลล์:</label><br>
-        <input class="input-box" type="email" id="email" placeholder="ตัวอย่าง: example@example.com">
-      </div>
-    </div>
-  </div>
-
-  @* Footer menu *@
-  <div class="footer-menu">
-    <div class="left-menu">
-      <button class="back-btn" onclick="location.href='@Url.Action("Index", "Home")'">
-        <i class="fas fa-chevron-left"></i>
-        กลับ
-      </button>
-    </div>
-
-    <div class="right-menu">
-      <div class="total">
-        <h1>รวมทั้งหมด 1,745 บาท</h1>
-      </div>
-      <button class="accept-btn"  onclick="location.href='@Url.Action("Success", "Cart")'">
-        สั่งซื้อ
-      </button>
-    </div>
-  </div>
-
+    }
+  }
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

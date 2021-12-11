@@ -28,6 +28,8 @@ nuget restore
 
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://github.com/songvut365/GameStore/blob/main/screenshot.jpg?raw=true" alt="Project logo"></a>
+ <img src="screenshot.jpg?raw=true" alt="Project logo"></a>
 </p>
+
+ 
 

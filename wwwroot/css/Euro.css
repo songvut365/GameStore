@@ -7,6 +7,9 @@
     gap: 35px;
 }
 
+
+
+
 #store #card-cat {
     background-color: #202020;
     width: 290px;
@@ -31,16 +34,12 @@
     border-radius: 4%;
  
 }
-#store #cat-label {
-    color: white;
-    
-}
 
 #store hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 2px solid #134E5E;
+    border-top: 2px solid white;
     margin: 3em 0;
     padding: 0;
     width: 1250px;
@@ -75,7 +74,6 @@
 #store #item-cat {
     background-color: #202020;
     width: 290px;
-    height: 520px;
     display: flex;
     flex-direction: column;
     border-radius: 4%;
@@ -102,12 +100,14 @@
 
 #store #item-wrapper #item-cat #item-label h2 {
     margin-bottom: 1px;
+    font-size: 100%;
 }
 
 #store #item-wrapper #item-cat #item-label h3 {
     color: #0F0F0F;
     margin-bottom: 3px;
     margin-top: 1px;
+    font-size: 100%;
 }
 
     #store #item-wrapper #item-cat #item-sub-label {
@@ -124,6 +124,7 @@
 
         #store #item-wrapper #item-cat #item-sub-label h1 {
             color: white;
+            margin-bottom: 5px;
         }
 
 #store #item-sub-container {
@@ -144,7 +145,9 @@ margin-right:15px;
 
 
 
-
+#type h1 {
+    color: white;
+}
 
 #type #item-wrapper {
     display: flex;
@@ -158,7 +161,6 @@ margin-right:15px;
 #type #item-cat {
     background-color: #202020;
     width: 290px;
-    height: 520px;
     display: flex;
     flex-direction: column;
     border-radius: 4%;
@@ -217,7 +219,8 @@ margin-right:15px;
     opacity:0.8;
 }
 
-#type #cat-label {
+#cat-label {
+    color: white;
 text-align: center;
 text-shadow: 0 0 2px grey, 0 0 12px white;
     }
