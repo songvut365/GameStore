@@ -37,6 +37,17 @@ namespace GameStore.Controllers
       return View(game);
     }
 
+        //แสดงสินค้าตามการค้นหา GET: /Store/Search?name=Action
+    public async Task<IActionResult> Search(string name)
+    {
+      ViewData["search"] = name;
+
+          var game = _context.Game.Where(entity => entity.Name.ToLower().Contains(name.ToLower()))
+            .ToList();
+
+      return View(game);
+    }
+
 
     //แดสงรายละเอียดของเกมนั้นๆ GET: /Store/Game?game=CallOfDuty
     public IActionResult Game(string name)
