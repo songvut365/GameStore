@@ -1,18 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-using System.Linq;
 using GameStore.Data;
 using GameStore.Models;
-using System.Collections.Generic;
-using System;
 
 namespace GameStore.Controllers
 {
   public class Store : Controller
   {
+    private readonly  DBContext _context;
+
+    public Store(DBContext context) {
+      _context = context;
+    }
 
         private readonly  DBContext _context;
 
@@ -49,12 +54,17 @@ namespace GameStore.Controllers
     }
 
 
+<<<<<<< HEAD
     //แดสงรายละเอียดของเกมนั้นๆ GET: /Store/Game?game=CallOfDuty
     public IActionResult Game(string name)
+=======
+    //แดสงรายละเอียดของเกมนั้นๆ GET: /Store/Game?id=5
+    public async Task<IActionResult> Game(int? id)
+>>>>>>> 886f48c10a5b5a91e31027d92848610b7a4c9cf9
     {
-      ViewData["Name"] = name;
+      var game = await _context.Game.FirstOrDefaultAsync(m => m.Id == id);
 
-      return View();
+      return View(game);
     }
   }
 }
