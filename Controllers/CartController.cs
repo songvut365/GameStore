@@ -1,6 +1,10 @@
+using System;    
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GameStore.Data;
@@ -98,9 +102,34 @@ namespace GameStore.Controllers
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Order order) 
     {
+      //email setting
+      SmtpClient smtp = new SmtpClient();
+        smtp.Host = "smtp.gmail.com";
+        smtp.Port = 587;
+        smtp.EnableSsl = true;
+        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+        smtp.UseDefaultCredentials = false;
+        smtp.Credentials = new NetworkCredential("gamestore.swstudio@gmail.com", "gamestore.swstudio1150");
+        var senderMail = new MailAddress("gamestore.swstudio@gmail.com", "Game Store");
+        var receiverEmail = new MailAddress(order.Email, "Receiver");
+
+        //mail body
+        var mailBody = new StringBuilder();
+        mailBody.AppendLine("<div style='font-family: Arial, Helvetica, sans-serif; width: 700px;'>");
+        mailBody.AppendLine("<h1 style='margin:0; padding:0;'>Game Store</h1><p>ขอบคุณที่ใช้บริการ Game Store คุณสามารถนำ CD-Key ไปลงทะเบียนได้ตามผู้ให้บริการที่คุณต้องการ หากคุณมีคำถามโปรดติดต่อ Call Center</p>");
+        mailBody.AppendLine("<div><table style='border: 1px solid #212121; margin-bottom: 1rem; width: 49%; float: left;'>");
+        mailBody.AppendLine("<tr style='background-color: #212121; color: white;'><th>Billing Information</th></tr>");
+        mailBody.AppendLine($"<tr><td>ชื่อ: {order.Name +' '+order.LastName}</td></tr><tr><td>เบอร์โทร: {order.Phone}</td></tr><tr><td>อีเมล: {order.Email}</td></tr>");
+        mailBody.AppendLine("</table><table style='border: 1px solid #212121; margin-bottom: 1rem; width: 49%; float: right;'>");
+        mailBody.AppendLine("<tr style='background-color: #212121; color: white;'><th>Payment Status</th></tr>");
+        mailBody.AppendLine("<tr><td style='color: green;'>Success</td></tr><tr><td>&nbsp;</td></tr> <tr><td>&nbsp;</td></tr></table></div><table style='border: 1px solid #212121; margin-bottom: 1rem; width: 100%;'>");
+        mailBody.AppendLine("<tr style='background-color: #212121; color: white;'><th >No.</th><th>Game</th><th>CD-Key</th><th>ราคา</th></tr>");  
+
       if (ModelState.IsValid) {
         List<Cart> carts = await _context.Cart.ToListAsync();
         
+        int counter = 1;
+        decimal allPrice = 0;
         //1. foreach all game in cart
         foreach(Cart cart in carts) {
           Order temp = new Order();
@@ -118,16 +147,35 @@ namespace GameStore.Controllers
             game.Amount -= temp.Game_Amount;
             await _context.AddAsync(temp);
             await _context.SaveChangesAsync();
+            
+            for(int i=0; i<temp.Game_Amount; i++) {
+              mailBody.AppendLine($"<tr><td>{counter}</td><td>{game.Name}</td><td>{Guid.NewGuid().ToString()}</td><td>{game.Price}</td></tr>");
+              counter++;
+            }
+            allPrice += temp.Price_Total;
           }
+
+          //if game not enough
           else {
             return RedirectToAction(nameof(Failed));
           }
         }
 
-        //3. clear game in cart
+
+        mailBody.AppendLine($"<tr style='background-color: #212121; color: white;' ><td>&nbsp;</td><td>&nbsp;</td><td style='text-align: center;'>ราคารวม</td><td>{allPrice}</td></tr>");
+        mailBody.AppendLine("</table></div>");
+
+        //3. Send mail
+        using (var message = new MailMessage(senderMail, receiverEmail)) {
+          message.Subject = "คำสั่งซื้อจาก Game Store";
+          message.Body = mailBody.ToString();
+          message.IsBodyHtml = true;
+          smtp.Send(message);
+        }
+
+        //4. clear game in cart
         _context.RemoveRange(_context.Cart);
         await _context.SaveChangesAsync();        
-        
         return RedirectToAction(nameof(Success));
       }  
       return RedirectToAction(nameof(Failed));
