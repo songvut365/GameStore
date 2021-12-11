@@ -35,9 +35,11 @@
             <div class="col-20">
               <label for="edit_mainpic">รูปหลัก</label>
             </div>
-            <div class="col-80">
+            <div class="col-60">
               <input asp-for="Main_Image" class="input-box" />
-              <input type="file" name="file" />
+            </div>
+            <div class="col-20">
+              <input type="file" name="img" class="upload_btn"/>
             </div>
           </div>
 
@@ -46,8 +48,11 @@
             <div class="col-20">
               <label for="edit_pic_1">รูปที่ 1</label>
             </div>
-            <div class="col-80">
+            <div class="col-60">
               <input asp-for="Image1" class="input-box" />
+            </div>
+            <div class="col-20">
+              <input type="file" name="img" class="upload_btn"/>
             </div>
           </div>
 
@@ -56,8 +61,11 @@
             <div class="col-20">
               <label for="edit_pic_2">รูปที่ 2</label>
             </div>
-            <div class="col-80">
+            <div class="col-60">
               <input asp-for="Image2" class="input-box" />
+            </div>
+            <div class="col-20">
+              <input type="file" name="img" class="upload_btn"/>
             </div>
           </div>
 
@@ -66,8 +74,11 @@
             <div class="col-20">
               <label for="edit_pic_3">รูปที่ 3</label>
             </div>
-            <div class="col-80">
+            <div class="col-60">
               <input asp-for="Image3" class="input-box" />
+            </div>
+            <div class="col-20">
+              <input type="file" name="img" class="upload_btn"/>
             </div>
           </div>
 
@@ -144,21 +155,6 @@
       </div>
     </div>
   </div>
-</form>
-
-<form method="post" enctype="multipart/form-data" asp-controller="Management" asp-action="Add">
-    <div class="form-group">
-        <div class="col-md-10">
-            <p>Upload File</p>
-            <input type="file" name="file" />
-        </div>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Upload file"/>
-    </div>
-    <div class="form-group">
-        <span>@TempData["msg"]</span>
-    </div>
 </form>
 
 @section Scripts {

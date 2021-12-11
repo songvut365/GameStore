@@ -40,16 +40,8 @@ namespace GameStore.Controllers
       return View();
     }
 
-
-    [HttpPost]
-    public async Task<ActionResult> FileUpload(IFormFile file)
-    {
-        await UploadFile(file);
-        TempData["msg"] = "File Uploaded successfully.";
-        return View();
-    }
     // Upload file on server
-    public async Task<bool> UploadFile(IFormFile file)
+    public async Task<bool> UploadFile(IFormFile file , string pathimg)
     {
         string path = "";
         bool iscopied = false;
@@ -58,7 +50,7 @@ namespace GameStore.Controllers
             if (file.Length>0)
             {
                 string filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
-                path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img"));
+                path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/" + pathimg));
                 using (var filestream = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
                 {
                     await file.CopyToAsync(filestream);
@@ -85,12 +77,15 @@ namespace GameStore.Controllers
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Add([Bind("Id,Youtube,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount,file")] Game game , IFormFile file)
+    public async Task<IActionResult> Add([Bind("Id,Youtube,Main_Image,Image1,Image2,Image3,Developer,Name,Type,Detail,Price,Amount,img")] Game game , IFormFile[] img)
     {
         if (ModelState.IsValid)
         {
             _context.Add(game);
-            await UploadFile(file);
+            await UploadFile(img[0],"img_main");
+            await UploadFile(img[1],"img_1");
+            await UploadFile(img[2],"img_2");
+            await UploadFile(img[3],"img_3");          
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
