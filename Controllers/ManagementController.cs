@@ -41,7 +41,7 @@ namespace GameStore.Controllers
     }
 
     // Upload file on server
-    public async Task<bool> UploadFile(IFormFile file , string pathimg)
+    public async Task<bool> UploadFile(IFormFile file , string pathimg, string newfilename)
     {
         string path = "";
         bool iscopied = false;
@@ -51,7 +51,7 @@ namespace GameStore.Controllers
             {
                 string filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
                 path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/" + pathimg));
-                using (var filestream = new FileStream(Path.Combine(path, file.FileName), FileMode.Create))
+                using (var filestream = new FileStream(Path.Combine(path, newfilename), FileMode.Create))
                 {
                     await file.CopyToAsync(filestream);
                 }
@@ -82,10 +82,10 @@ namespace GameStore.Controllers
         if (ModelState.IsValid)
         {
             _context.Add(game);
-            await UploadFile(img[0],"img_main");
-            await UploadFile(img[1],"img_1");
-            await UploadFile(img[2],"img_2");
-            await UploadFile(img[3],"img_3");          
+            await UploadFile(img[0],"img_main", game.Main_Image);
+            await UploadFile(img[1],"img_1", game.Image1);
+            await UploadFile(img[2],"img_2", game.Image2);
+            await UploadFile(img[3],"img_3", game.Image3);          
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
