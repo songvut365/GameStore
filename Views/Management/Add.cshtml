@@ -36,10 +36,11 @@
               <label for="edit_mainpic">รูปหลัก</label>
             </div>
             <div class="col-60">
-              <input asp-for="Main_Image" class="input-box" />
+              <input asp-for="Main_Image" class="input-box" id="main_img" />
             </div>
             <div class="col-20">
-              <input type="file" name="img" class="upload_btn"/>
+              <input type="file" name="img" class="upload_btn" id="btn_main_img" hidden/>
+              <label for="btn_main_img" class="upload_btn" >Choose File</label>
             </div>
           </div>
 
@@ -49,10 +50,11 @@
               <label for="edit_pic_1">รูปที่ 1</label>
             </div>
             <div class="col-60">
-              <input asp-for="Image1" class="input-box" />
+              <input asp-for="Image1" class="input-box" id="img_1" />
             </div>
             <div class="col-20">
-              <input type="file" name="img" class="upload_btn"/>
+              <input type="file" name="img" class="upload_btn" id="btn_img_1" hidden/>
+              <label for="btn_img_1" class="upload_btn" >Choose File</label>
             </div>
           </div>
 
@@ -62,10 +64,11 @@
               <label for="edit_pic_2">รูปที่ 2</label>
             </div>
             <div class="col-60">
-              <input asp-for="Image2" class="input-box" />
+              <input asp-for="Image2" class="input-box" id="img_2" />
             </div>
             <div class="col-20">
-              <input type="file" name="img" class="upload_btn"/>
+              <input type="file" name="img" class="upload_btn" id="btn_img_2" hidden/>
+              <label for="btn_img_2" class="upload_btn" >Choose File</label>
             </div>
           </div>
 
@@ -75,10 +78,11 @@
               <label for="edit_pic_3">รูปที่ 3</label>
             </div>
             <div class="col-60">
-              <input asp-for="Image3" class="input-box" />
+              <input asp-for="Image3" class="input-box" id="img_3" />
             </div>
             <div class="col-20">
-              <input type="file" name="img" class="upload_btn"/>
+              <input type="file" name="img" class="upload_btn" id="btn_img_3" hidden/>
+              <label for="btn_img_3" class="upload_btn" >Choose File</label>
             </div>
           </div>
 
@@ -156,6 +160,37 @@
     </div>
   </div>
 </form>
+
+@* <br>
+
+<!-- actual upload which is hidden -->
+<input type="file" id="actual-btn" hidden/>
+
+<!-- our custom upload button -->
+<label for="actual-btn" class="upload_btn" >Choose File</label>
+
+<input asp-for="Price" id="file-chosenss" class="input-box" /> *@
+
+<script>
+
+  const main_img = document.getElementById('btn_main_img');
+  const btn_img_1 = document.getElementById('btn_img_1');
+  const btn_img_2 = document.getElementById('btn_img_2');
+  const btn_img_3 = document.getElementById('btn_img_3');
+
+  main_img.addEventListener('change', function(){
+    document.getElementById("main_img").value = this.files[0].name;})
+
+  btn_img_1.addEventListener('change', function(){
+    document.getElementById("img_1").value = this.files[0].name;})
+
+  btn_img_2.addEventListener('change', function(){
+    document.getElementById("img_2").value = this.files[0].name;})
+
+  btn_img_3.addEventListener('change', function(){
+    document.getElementById("img_3").value = this.files[0].name;})
+
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

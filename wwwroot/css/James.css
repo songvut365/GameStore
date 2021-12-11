@@ -60,6 +60,11 @@ label {
   width: 80%;
   margin-top: 6px;
 }
+.col-60 {
+  float: right;
+  width: 60%;
+  margin-top: 6px;
+}
 
 /* Fix textarea size and hide scrollbar*/
 .input-box::-webkit-scrollbar {
@@ -93,6 +98,21 @@ textarea {
 }
 
 /*/////////////////////// Button //////////////////////*/
+.upload_btn{
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#file-chosen{
+  margin-left: 0.3rem;
+  font-family: sans-serif;
+}
+
 /* ปุ่มกด Cr.Songvut */
 .james_btn {
   width: 200px;
