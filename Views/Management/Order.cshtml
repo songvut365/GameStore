@@ -8,7 +8,6 @@
 
 @model List<GameStore.Models.Order>
 
-
 <div id="order">
     <h2>ข้อมูลคำสั่งซื้อ</h2>
     
@@ -24,6 +23,11 @@
             <p>customer-email</p>
 
         </div>
+        <div class="customer-phone">
+
+            <p>customer-phone</p>
+
+        </div>
         <div class="quantity">
             <p>quantity</p>
         </div>
@@ -35,24 +39,29 @@
     @foreach (var item in Model)
     {
         <div class="container">
-        <div class="game-name">
-            <p>Game ID: @item.Game_Id</p>
-        </div>
-        <div class="customer-name">
-            <p>@item.Name @item.LastName</p>
-        </div>
-        <div class="customer-email">
+            <div class="game-name">
+                <p>Game ID: @item.Game_Id</p>
+            </div>
+            <div class="customer-name">
+                <p>@item.Name @item.LastName</p>
+            </div>
+            <div class="customer-email">
 
-            <p>@item.Email</p>
+                <p>@item.Email</p>
 
+            </div>
+            <div class="customer-phonel">
+
+                <p>@item.Phone</p>
+
+            </div>
+            <div class="quantity">
+                <p>จำนวน : @item.Game_Amount</p>
+            </div>
+            <div class="sum-price">
+                <p>@item.Price_Total บาท</p>
+            </div>
         </div>
-        <div class="quantity">
-            <p>จำนวน : @item.Game_Amount</p>
-        </div>
-        <div class="sum-price">
-            <p>@item.Price_Total บาท</p>
-        </div>
-    </div>
     }
     
 
