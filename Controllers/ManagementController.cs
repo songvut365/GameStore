@@ -82,13 +82,20 @@ namespace GameStore.Controllers
         if (ModelState.IsValid)
         {
             _context.Add(game);
-            await UploadFile(img[0],"img_main", game.Main_Image);
-            await UploadFile(img[1],"img_1", game.Image1);
-            await UploadFile(img[2],"img_2", game.Image2);
-            await UploadFile(img[3],"img_3", game.Image3);          
+            try {
+                await UploadFile(img[0],"img_main", game.Main_Image);
+                await UploadFile(img[1],"img_1", game.Image1);
+                await UploadFile(img[2],"img_2", game.Image2);
+                await UploadFile(img[3],"img_3", game.Image3);    
+            }
+            catch {
+                TempData["msg"] = "กรุณาเพื่มรูปให้ครบทุกช่อง";
+                return View(game);
+            }         
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        TempData["msg"] = "กรุณากรอกข้อมูลให้ครบถ้วน";
         return View(game);
     }
 
@@ -133,8 +140,7 @@ namespace GameStore.Controllers
                     await UploadFile(img[3],"img_3", game.Image3);    
                 }
                 catch
-                { }
-                    
+                { }                  
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -150,6 +156,7 @@ namespace GameStore.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+        TempData["msg"] = "กรุณากรอกข้อมูลให้ครบถ้วน";
         return View(game);
     }
     private bool GameExists(int id)
