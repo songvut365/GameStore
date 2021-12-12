@@ -43,7 +43,6 @@ namespace GameStore.Controllers
         return View(NewOrder);
     }
 
-<<<<<<< HEAD
     // POST: Game/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
@@ -53,35 +52,6 @@ namespace GameStore.Controllers
         _context.Game.Remove(game);
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(List));
-=======
-    // Upload file on server
-    public async Task<bool> UploadFile(IFormFile file , string pathimg, string newfilename)
-    {
-        string path = "";
-        bool iscopied = false;
-        try
-        {
-            if (file.Length>0)
-            {
-                string filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
-                path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/" + pathimg));
-                using (var filestream = new FileStream(Path.Combine(path, newfilename), FileMode.Create))
-                {
-                    await file.CopyToAsync(filestream);
-                }
-                iscopied = true;
-            }
-            else
-            {
-                iscopied = false;
-            }
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-        return iscopied;
->>>>>>> main
     }
 
     //เพิ่มสินค้าในสต๊อก GET: /Management/Add/ 
@@ -129,6 +99,34 @@ namespace GameStore.Controllers
         }
         ViewData["Id"] = id;
         return View(game);
+    }
+    // Upload file on server
+    public async Task<bool> UploadFile(IFormFile file , string pathimg, string newfilename)
+    {
+        string path = "";
+        bool iscopied = false;
+        try
+        {
+            if (file.Length>0)
+            {
+                string filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/" + pathimg));
+                using (var filestream = new FileStream(Path.Combine(path, newfilename), FileMode.Create))
+                {
+                    await file.CopyToAsync(filestream);
+                }
+                iscopied = true;
+            }
+            else
+            {
+                iscopied = false;
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        return iscopied;
     }
 
     // POST: Game/Edit/5
