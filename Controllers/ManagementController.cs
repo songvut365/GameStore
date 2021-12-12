@@ -52,6 +52,9 @@ namespace GameStore.Controllers
     //แสดงรายการสินค้าในสต๊อก GET: /Management/List
     public async Task<IActionResult> List()
     {
+        if(!isLogin) {
+    　      return RedirectToAction(nameof(Index));
+        }
         List<Game> gameList = await _context.Game.ToListAsync(); 
         return View(gameList);
     }
@@ -59,6 +62,9 @@ namespace GameStore.Controllers
     //แสดงรายการคำสั่งซื้อ GET: /Management/Order
     public async Task<IActionResult> Order()
     {
+        if(!isLogin) {
+    　      return RedirectToAction(nameof(Index));
+        }
         List<Order> NewOrder = await _context.Order.ToListAsync();
         return View(NewOrder);
     }
@@ -77,7 +83,10 @@ namespace GameStore.Controllers
     //เพิ่มสินค้าในสต๊อก GET: /Management/Add/ 
     public IActionResult Add()
     {
-      return View();
+        if(!isLogin) {
+    　      return RedirectToAction(nameof(Index));
+        }
+        return View();
     }
 
     [HttpPost]
@@ -106,7 +115,10 @@ namespace GameStore.Controllers
 
     //แก้ไขสินค้าในสต๊อกตาม id GET: /Management/Edit?id=1
     public async Task<IActionResult> Edit(int? id)
-    {
+    {   
+        if(!isLogin) {
+    　      return RedirectToAction(nameof(Index));
+        }
         if (id == null)
         {
             return NotFound();
