@@ -26,7 +26,10 @@ namespace GameStore.Controllers
 
     //หน้าล็อคอิน GET: /Management/
     public IActionResult Index()
-    {
+    {  
+        if(isLogin) {
+            return RedirectToAction(nameof(List));
+        }
       return View();
     }
 
