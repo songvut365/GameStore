@@ -199,23 +199,20 @@ img {
 .card {
     display:inline-block;
     width: 250px;
-    height: 600px;
+    height: 465px;
     margin-left:15px;
+    border-radius: 6%;
+    background-color: #202020;
+    margin-bottom: 45px;
+
 }
 
     .card img {
         width: 250px;
+        border-radius: 6%;
     }
 
-.plat-card {
-    position: relative;
-    width: 250px;
-    top: -320px;
-    height: 365px;
-    background-color: #202020;
-    z-index: -1;
-    border-radius: 4%;
-}
+ 
 
 .card-context {
     margin: 15px;
@@ -240,6 +237,7 @@ img {
 }
 
 .card-game-provider {
+    margin-top: 0px;
     text-align: left;
     color: grey;
 }
