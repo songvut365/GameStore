@@ -220,7 +220,6 @@
 
 /* ปุ่มเพิ่มใส่ตระกร้า */
 #game .cart-btn {
-  width: 100px;
   background-color: #269c59;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
@@ -230,7 +229,6 @@
   border: 0;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  margin-top: 15px;
   margin-right: 10px;
   float: right;
 }
@@ -328,13 +326,15 @@
     width: 120px;
     height: 120px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
-  }
+    margin-left: auto;
+    margin-right: auto;
+}
   
   /* รูปภาพเกม */
   #game .cover img {
     object-fit: cover;
     width: 100%;
-    height: 100%;
+
   }
   
   /* ปุ่มเพิ่มใส่ตระกร้า */
@@ -409,4 +409,12 @@
     width: 100%;
     margin-top: -20px;
   }
+}
+
+@media (max-width: 575px) {
+.cover-box{
+  padding-bottom: 15px;
+}
+
+
 }
