@@ -1,10 +1,13 @@
 @{
   ViewData["Title"] = "Order";
+  Dictionary<int, string> gameNameMap = new Dictionary<int, string>(){{1,"Call of Duty: Vanguard"},{2,"Minecraft"},{3,"World War Z"},{4,"Battlefield 2042"},{5,"PUBG"},{6,"Far Cry 6 Standard Edition"},{7,"Grand Theft Auto V"},{8,"Horizon Zero Dawn"},{9,"FIFA 22"},{10,"Resident Evil Village"},{11,"Dark Souls III"},{12,"Final Fantasy VII Remake"},{13,"Hitman 3"},{14,"Returnal"},{15,"Fall Guys"},{16,"Among Us"},{17,"The Last of Us Part II"},{18,"Marvel's Spider-Man"},{19,"Days Gone"},{20,"The Dark Pictures"},{21,"Call of Duty: Vanguard"},{22,"Call of Duty: Vanguard"}};
 }
 
 @section css {
   <link rel="Stylesheet" href="@Href("~/css/Sek.css")">
 }
+
+@model List<GameStore.Models.Order>
 
 <div id="order">
     <h2>ข้อมูลคำสั่งซื้อ</h2>
@@ -21,6 +24,11 @@
             <p>customer-email</p>
 
         </div>
+        <div class="customer-phone">
+
+            <p>customer-phone</p>
+
+        </div>
         <div class="quantity">
             <p>quantity</p>
         </div>
@@ -28,24 +36,34 @@
             <p>sum-price</p>
         </div>
     </div>
-    <div class="container">
-        <div class="game-name">
-            <p>MINECRAFT</p>
-        </div>
-        <div class="customer-name">
-            <p>สานตอก อะสะบะละ</p>
-        </div>
-        <div class="customer-email">
 
-            <p>asabara@kmitl.ac.th</p>
+    @foreach (var item in Model)
+    {
+        <div class="container">
+            <div class="game-name">
+                <p>@gameNameMap[@item.Game_Id] </p>
+            </div>
+            <div class="customer-name">
+                <p>@item.Name @item.LastName</p>
+            </div>
+            <div class="customer-email">
 
+                <p>@item.Email</p>
+
+            </div>
+            <div class="customer-phone">
+
+                <p>+66 @item.Phone</p>
+
+            </div>
+            <div class="quantity">
+                <p>จำนวน : @item.Game_Amount</p>
+            </div>
+            <div class="sum-price">
+                <p>@item.Price_Total บาท</p>
+            </div>
         </div>
-        <div class="quantity">
-            <p>จำนวน : 1</p>
-        </div>
-        <div class="sum-price">
-            <p>155 บาท</p>
-        </div>
-    </div>
+    }
+    
 
 </div>

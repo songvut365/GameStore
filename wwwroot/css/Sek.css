@@ -57,7 +57,16 @@
      align-items: center;
 }
 
-#list .edit-store button , #list .del-store button, #list .add-store button {
+#list .add-store button {
+    font-size: 2rem;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 3rem;
+    border: none;
+    background-color: #2ABB69;
+}
+#list .edit-store button , #list .del-store button {
       font-size: 1rem;
       width: 80px;
       height: 80px;
@@ -108,21 +117,73 @@
         align-items: center;
         margin-bottom: 1rem;
         
+        
+        
     }
     
     #order .head-col p {
-        font-size: 0.8rem;
+        font-size: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
     }
     
     #order .container p {
         font-size: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    #order .game-name {
+        width: 20%;
+        
+    }
+    #order .customer-name {
+        width: 20%;
+    }
+    #order .customer-email {
+        width: 20%;
+    }
+    #order .customer-phone {
+        width: 20%;
+    }
+    #order .quantity {
+        width: 10%;
+    }
+    #order .sum-price {
+        width: 10%;
+    }
+
+    #order .head-col .game-name {
+        width: 20%;
+        
+    }
+    #order .head-col .customer-name {
+        width: 20%;
+    }
+    #order .head-col .customer-email {
+        width: 20%;
+    }
+    #order .head-col .customer-phone {
+        width: 20%;
+    }
+    #order .head-col .quantity {
+        width: 10%;
+    }
+    #order .head-col .sum-price {
+        width: 10%;
     }
 
     @media (max-width :800px){
         #order .container { width: 100%;}
         #order .container p {font-size: 0.5rem;}
         #order .head-col p {font-size: 0.5rem;}
-
+        /*=============================================================*/
         #list .container{ width: 100%; justify-content: space-between;}
         #list .container p { font-size:0.7rem;}
         #list .add-store button {width: 30px; height: 30px; font-size: 1rem;}

@@ -6,55 +6,62 @@
   <link rel="Stylesheet" href="@Href("~/css/Sek.css")">
 }
 
+@model List<GameStore.Models.Game>
+
+
 <div id="list">
     <h1>List Stock</h1>
-    <div class="container">
+
+    @foreach (var item in Model)
+    {
+        <div class="container">
+        
         <div class="cover">
-            <img src="https://upload.wikimedia.org/wikinews/en/7/7a/Minecraft_game_cover.jpeg" alt="minecraft">
+            <img src="/img/img_main/@item.Main_Image" alt="@item.Main_Image">
         </div>
         <div class="group-text">
+
+            
             <div class="game-name">
-                <p>MINECRAFT</p>
+                <p>@item.Name</p>
             </div>
+
+            
             <div class="game-remain">
                 
-                <p class="remain-quantity">จำนวนคงเหลือ : 1</p>
+                <p class="remain-quantity">จำนวนคงเหลือ : @item.Amount</p>
                 
             </div>
+
+            <!--//ส่ง id ของตัวที่จะ edit-->
             <div class="edit-store">
-                <button>แก้ไข</button>
+                <a href="/Management/Edit?id=@item.Id"><button>แก้ไข</button></a>
             </div>
+
+            <!--//ส่ง id ตัวที่จะลบ-->
             <div class="del-store">
-                <button>ลบ</button>
+                
+                <form asp-action="Delete">
+                @* <input type="hidden" asp-for="Id" /> *@
+                
+                <button asp-action="Delete" asp-route-id="@item.Id" type="submit" asp-for="@item.Id">ลบ</button>
+                </form>
+                
+                
+                
+               
             </div>
         </div>
     </div>
+    }
+    <!-- เดี๋ยวค่อย foreach ออกมา ในก้อนนี้-->
+    
 
-    <div class="container">
-        <div class="cover">
-            <img src="https://static.wikia.nocookie.net/battlefield/images/7/7d/Battlefield_2042_Gold_Edition_Cover.jpg" alt="minecraft">
-        </div>
-        <div class="group-text">
-            <div class="game-name">
-                <p>BATTLE FIELD 2042</p>
-            </div>
-            <div class="game-remain">
-
-                <p class="remain-quantity">จำนวนคงเหลือ : 1</p>
-
-            </div>
-            <div class="edit-store">
-                <button>แก้ไข</button>
-            </div>
-            <div class="del-store">
-                <button>ลบ</button>
-            </div>
-        </div>
-    </div>
+    
 
     
     <div class="add-store">
-        <button>+</button>
+        <a href ="/Management/Add"><button>+</button></a>
     </div>
     
 
