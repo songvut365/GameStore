@@ -173,31 +173,37 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 1280px;
+    box-sizing: border-box;
 }
 
 #game .game-teaser {
+  width: 80%;
+  box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
 #game .video-border {
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
-  height: 30rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 #game .container {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 #game .cover-box {
-  width: 30%;
-  width: 15rem;
+  width: 20%;
   height: 30rem;
   border-radius: 8px;
   background-color: #202020;
   margin-bottom: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  display:flex;
+  flex-direction: column;
 }
 
 #game .container p {
@@ -206,7 +212,7 @@
 
 /* กล่องรูปภาพเกม */
 #game .cover {
-  width: 15rem;
+  width: 100%;
   height: 15rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 }
@@ -221,16 +227,14 @@
 /* ปุ่มเพิ่มใส่ตระกร้า */
 #game .cart-btn {
   background-color: #269c59;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  margin: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
   border: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  margin-right: 10px;
-  float: right;
 }
 
 #game .cart-btn:hover {
@@ -239,6 +243,12 @@
 }
 #game .cart-btn:hover {
   background-color: #269c59;
+}
+
+#game .cart-btn a {
+  font-weight: bold;
+  color: #212121;
+  text-decoration: none;
 }
 
 #game .game-price, .game-dev, .game-remain{
@@ -253,6 +263,7 @@
   text-align: left;
   margin-left: 10px;
   display: inline;
+  font-weight: bold;
 }
 
 #game .right-content {
@@ -266,19 +277,18 @@
 
 /* ขนาดรูปภาพประกอบ */
 #game .game-img {
-  width: 310px;
-  height: 310px;
+  width: 80%;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  gap: 35px;
-  width: 70%;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 /* ขนาดรูปภาพ */
 #game .frist-img, .second-img, .third-img {
-  width: 310px;
-  height: 310px;
+  width: 320px;
+  height: 320px;
   border-radius: 8px;
   display: inline;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -287,21 +297,29 @@
 /* คำอธิบายเกม */
 #game .game-description {
   text-indent: 50px;
+  padding-right: 1rem;
   width: 80%;
+  box-sizing: border-box;
+}
+
+#game .game-description p {
+  background-color: #212121;
+  padding: 1rem;
+  margin: 0;
+  border-radius: 8px;
 }
 
 @media (max-width: 800px) {
   #game .game-name {font-size: 1rem;}
-  #game .container p { font-size: 0.7rem; }
+  #game .container p { font-size: 0.7rem;}
   #game .cover { width: 50px; height: 50px; }
 
   #game .game-teaser {
+    width: 60%;
     margin-bottom: 1rem;
   }
   
   #game .video-border {
-    width: 230px;
-    height: 230px;
     border-radius: 8px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   }
@@ -313,44 +331,43 @@
   }
   
   #game .cover-box {
-    height: 230px;
     width: 40%;
+    height: 340px;
     border-radius: 8px;
     background-color: #202020;
     margin-bottom: 1rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
   
   /* กล่องรูปภาพเกม */
   #game .cover {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 150px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
-    margin-left: auto;
-    margin-right: auto;
-}
+  }
   
   /* รูปภาพเกม */
   #game .cover img {
     object-fit: cover;
     width: 100%;
-
   }
   
   /* ปุ่มเพิ่มใส่ตระกร้า */
   #game .cart-btn {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.3rem;
     width: 100px;
     background-color: #269c59;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
     cursor: pointer;
-    font-size: 0.7rem;
-    font-weight: bold;
     border: 0;
+    font-size: 0.7rem;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    margin-top: -18px;
-
   }
   
   #game .cart-btn:hover {
@@ -364,7 +381,6 @@
   #game .game-price, .game-dev, .game-remain{
     display: flex;
     justify-content: space-between;
-    margin-top: -18px;
   }
   
   #game .left-content {
@@ -385,13 +401,11 @@
   
   /* ขนาดรูปภาพประกอบ */
   #game .game-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 8px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    width: 70%;
+    box-sizing: border-box;
+    padding: 0;
   }
   
   /* ขนาดรูปภาพ */
@@ -405,9 +419,9 @@
   
   /* คำอธิบายเกม */
   #game .game-description {
+    padding: 0;
     text-indent: 50px;
     width: 100%;
-    margin-top: -20px;
   }
 }
 
