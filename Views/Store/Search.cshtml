@@ -1,5 +1,5 @@
 @{
-  ViewData["Title"] = ViewData["type"];
+  ViewData["Title"] = ViewData["search"];
 }
 
 @section css {
@@ -9,7 +9,7 @@
 <div id="type">
 
 
-<span id="cat-label"><h1>@ViewData["type"]</h1></span>
+<span id="cat-label"><h1>ผลการค้นหา "@ViewData["search"]"</h1></span>
 
     <div id="item-wrapper">
 
@@ -30,7 +30,7 @@
  @foreach (var item in Model) {
 
                 <div id="item-cat" class="shadowBox">
-<a href="/Store/Game?id=@item.Id">
+<a href='@Url.Action("Game", "Store", new { game = @item.Name })'> 
                     <img class="shadowBox" src="/img/img_main/@item.Main_Image"> 
  </a>
                         <div id="item-sub-container">

@@ -20,7 +20,7 @@
 
     <div class="layout-finder">
         <div class="layout-finder-left">
-            <h3>เกมลดราคา</h3>
+            <span onclick="loadDoc()" class="nav-brand"><i class="fas fa-sync-alt"></i></span>
         </div>
         <div class="layout-finder-right">
             <a asp-area="" style=" text-decoration: none;color:white;" asp-controller="Store" asp-action="Index">
@@ -53,7 +53,7 @@ console.log(data)
             for (i = 0; i <data.length; i++) { 
                 x += `
             <div class="card">
-                <a href="/Store/Game?game=`+data[i].name+`">
+                <a href="/Store/Game?id=`+data[i].id+`">
                 <img src="/img/img_main/`+data[i].main_Image+`">
                  </a>
                 <div class="card-context">
@@ -74,7 +74,9 @@ console.log(data)
           
        }
     };
-    xhttp.open("GET", "https://localhost:5001/RandomGame", true);
+    var url = window.location.href;
+    xhttp.open("GET", url + "RandomGame", true);
+
     xhttp.send();
 }
 

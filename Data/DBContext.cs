@@ -16,5 +16,6 @@ namespace GameStore.Data
 
         public DbSet<Game> Game { get; set; }
         public DbSet<Order> Order { get; set; }
+        public DbSet<Cart> Cart { get;set; }
     }
 }

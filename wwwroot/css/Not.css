@@ -1,9 +1,14 @@
 /* จัดกึ่งกลาง, ตั้งความกว้าง */
-#cart, #success {
+#cart, #success, #information {
   color: white;
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
+}
+
+#cart a, #cart a:visited {
+  text-decoration: none;
+  color: #212121;
 }
 
 /* Game List in Cart */
@@ -20,8 +25,19 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+#cart .empty-container {
+  border-radius: 8px;
+  background-color: #202020;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
 /* ตัวอักษรในแต่ละเกม */
-#cart .container p {
+#cart .container p, #cart .empty-container{
   font-size: 1.5rem;
 }
 
@@ -195,6 +211,27 @@
   background-color: #269c59;
 }
 
+#cart .total {
+  display:flex;
+  gap: 1rem;
+}
+/* 
+#cart #price_total
+{
+  width: 7rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 3rem;
+  cursor: text;
+}
+#cart #price_total:active {
+  border: 0px solid rgba(0, 0, 0, 0);
+} */
+
 /* responsive เมื่อกว้างน้อยกว่า 800px */
 @media (max-width: 800px) {
   #cart .footer-menu, #cart .right-menu { flex-direction: column; }
@@ -237,6 +274,9 @@
 }
 
 #success .text {
+  padding: 0;
+  margin: 0;
+  margin-top: 2rem;
   font-size: 3rem;
 }
 
@@ -266,4 +306,175 @@
   #success .success-box { width: 100%; }
   #success .icon { font-size: 10rem; height: 12rem; }
   #success .text { font-size: 2rem; }
+}
+
+#success .icon-error {
+  color: #c0392b;
+  font-size: 15rem;
+  padding: 0;
+  height: 16rem;
+}
+
+#success .sub-text {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+
+/* ปุ่มกลับหน้า failed */
+#success .error-btn {
+  width: 200px;
+  background-color: #c0392b;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+#success .error-btn:hover {
+  background-color: #e74c3c;
+  cursor: pointer;
+}
+#success .error-btn:active {
+  background-color: #c0392b;
+}
+
+/*===============================================================================*/
+/* รายการแต่ละเกม */
+#information .container {
+  border-radius: 8px;
+  background-color: #202020;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ตัวอักษรในแต่ละเกม */
+#information .container p {
+  font-size: 1.5rem;
+}
+
+
+/* Payment */
+/* กล่องการจ่ายเงิน */
+#information .payment {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+/* กล่องบัตรเครดิต, กล่องข้อมูล */
+#information .credit-card, #information .information {
+  width: 50%;
+  padding: 0.5rem 2rem 2rem 2rem;
+  border-radius: 8px;
+  background-color: #202020;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* กล่อง 2 input */
+#information .exp-cvc, #information .fname-lname {
+  display: flex;
+  gap: 1rem;
+}
+
+/* กล่องแบ่ง input 1 และ 2 */
+#information .first-input, 
+#information .second-input {
+  width: 50%;
+}
+#information .credit-card input::placeholder {
+  color: lightgray;
+}
+
+/* ช่องใส่ข้อมูล */
+#information .input-box {
+  padding: .5rem;
+  padding-left: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 0;
+  font-size: 1rem;
+  color: #212121;
+  color: gray;
+  font-weight: normal;
+}
+
+/* responsive เมื่อกว้างน้อยกว่า 800px */
+@media (max-width: 800px) {
+  #information .payment { flex-direction: column; }
+  #information .credit-card, #cart .information {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #information .exp-cvc, #cart .fname-lname {
+    flex-direction: column;
+  }
+  #information .first-input, #cart .second-input {
+    width: 100%;
+  }
+}
+
+/* Menu Footer */
+/* กล่อง footer menu */
+#information .footer-menu {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* กล่องแบ่ง ซ้าย-ขวา */
+#information .left-menu, #information .right-menu {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#information .right-menu {
+  justify-content: end;
+}
+
+/* ปุ่มกลับ, ปุ่มสั่งซื้อ */
+#information .back-btn, #information .accept-btn {
+  width: 200px;
+  background-color: #269c59;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+#information .back-btn:hover, #information .accept-btn:hover {
+  background-color: #51c483;
+  cursor: pointer;
+}
+#information .back-btn:active, #information .accept-btn:active {
+  background-color: #269c59;
+}
+
+#information .total {
+  display:flex;
+  gap: 1rem;
+}
+
+/* responsive เมื่อกว้างน้อยกว่า 800px */
+@media (max-width: 800px) {
+  #information .footer-information, #information .right-menu { flex-direction: column; }
+  #information .left-menu { order: 3;}
+  #information .left-menu, #information .right-menu, 
+  #information .accept-btn, #information .back-btn { width: 100%; }
+  #information .back-btn { margin-top: 1rem; }
 }

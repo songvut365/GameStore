@@ -1,0 +1,82 @@
+@model GameStore.Models.Order
+
+@{
+  ViewData["Title"] = "Information";
+}
+
+@section css {
+  <link rel="Stylesheet" href="@Href("~/css/Not.css")">
+}
+
+<div id="information">
+  <h1>ข้อมูลการสั่งซื้อ</h1>
+
+  <form asp-action="Create">
+  @* Payment *@
+  <div class="payment">
+    @* Credit Cart *@
+    <div class="credit-card">
+      <center><h2>ข้อมูลการชำระเงิน</h2></center>
+
+      <div class="card-number-input">
+        <label for="card-number">Card Number:</label><br>
+        <input class="input-box" type="text" id="card-number" placeholder="ตัวอย่าง: 0123XXXXXXXXXXXX">
+      </div>
+      <br>
+      
+      <div class="exp-cvc">
+        <div class="first-input">
+          <label for="exp">EXP:</label><br>
+          <input class="input-box" type="text" id="exp" placeholder="ตัวอย่าง: MM/YY">
+        </div>
+        <div class="second-input">
+          <label for="cvc">CVC:</label><br>
+          <input class="input-box" type="text" id="cvc" placeholder="ตัวอย่าง: 123">
+        </div>
+      </div>
+
+    </div>
+
+    @* Information *@
+    <div class="information">
+      <center><h2>ข้อมูลลูกค้า</center>
+      <div class="fname-lname">
+        <div class="first-input">
+          <label for="fname">ชื่อ:</label><br>
+          <input asp-for="Name" class="input-box" type="text" id="fname" placeholder="ตัวอย่าง: นายสมชาย">
+        </div>
+        <div class="second-input">
+          <label for="lname">นามสกุล:</label><br>
+          <input asp-for="LastName" class="input-box" type="text" id="lname" placeholder="ตัวอย่าง: ใจดี">
+        </div>
+      </div><br>
+      
+      <div class="tel-box">
+        <label for="tel">เบอร์โทร:</label><br>
+        <input asp-for="Phone" class="input-box" type="tel" id="tel" placeholder="ตัวอย่าง: 0812345678">
+      </div><br>
+
+      <div class="mail-box">
+        <label for="email">อีเมลล์:</label><br>
+        <input asp-for="Email" class="input-box" type="email" id="email" placeholder="ตัวอย่าง: example@example.com">
+      </div>
+    </div>
+  </div>
+
+  @* Footer menu *@
+  <div class="footer-menu">
+    <div class="left-menu">
+      <button class="back-btn" onclick="location.href='@Url.Action("Index", "Cart")'">
+        <i class="fas fa-chevron-left"></i>
+        กลับ
+      </button>
+    </div>
+
+    <div class="right-menu">
+      <button class="accept-btn" type="submit" >
+        สั่งซื้อ
+      </button>
+    </div>
+  </div>
+  </form>
+</div>
