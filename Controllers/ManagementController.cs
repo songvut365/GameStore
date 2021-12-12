@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GameStore.Data;
@@ -29,17 +30,30 @@ namespace GameStore.Controllers
 
 
     //แสดงรายการสินค้าในสต๊อก GET: /Management/List
-    public IActionResult List()
+    public async Task<IActionResult> List()
     {
-      return View();
+        List<Game> gameList = await _context.Game.ToListAsync(); 
+        return View(gameList);
     }
 
     //แสดงรายการคำสั่งซื้อ GET: /Management/Order
-    public IActionResult Order()
+    public async Task<IActionResult> Order()
     {
-      return View();
+        List<Order> NewOrder = await _context.Order.ToListAsync();
+        return View(NewOrder);
     }
 
+<<<<<<< HEAD
+    // POST: Game/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var game = await _context.Game.FindAsync(id);
+        _context.Game.Remove(game);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(List));
+=======
     // Upload file on server
     public async Task<bool> UploadFile(IFormFile file , string pathimg, string newfilename)
     {
@@ -67,6 +81,7 @@ namespace GameStore.Controllers
             throw;
         }
         return iscopied;
+>>>>>>> main
     }
 
     //เพิ่มสินค้าในสต๊อก GET: /Management/Add/ 
