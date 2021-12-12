@@ -17,17 +17,37 @@ namespace GameStore.Controllers
   public class ManagementController : Controller
   {
     private readonly  DBContext _context;
+    private static bool isLogin = false;
 
     public ManagementController(DBContext context)
     {
         _context = context;
     }
+
     //หน้าล็อคอิน GET: /Management/
     public IActionResult Index()
     {
       return View();
     }
 
+    //Login
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginModel loginModel) {
+      if(loginModel.User == "admin" && loginModel.Password == "1234") {
+        isLogin = true;
+        return RedirectToAction(nameof(Order));
+      }
+      else {
+        isLogin = false;
+        return RedirectToAction(nameof(Index));
+      }
+    }
+
+    //model for form login
+    public class LoginModel {
+      public String User {get; set;}
+      public String Password {get; set;}
+    }
 
     //แสดงรายการสินค้าในสต๊อก GET: /Management/List
     public async Task<IActionResult> List()
