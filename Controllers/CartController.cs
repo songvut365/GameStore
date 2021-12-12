@@ -102,7 +102,10 @@ namespace GameStore.Controllers
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Order order) 
     {
-      //email setting
+
+      if (ModelState.IsValid) {
+        List<Cart> carts = await _context.Cart.ToListAsync();
+              //email setting
       SmtpClient smtp = new SmtpClient();
         smtp.Host = "smtp.gmail.com";
         smtp.Port = 587;
@@ -125,8 +128,6 @@ namespace GameStore.Controllers
         mailBody.AppendLine("<tr><td style='color: green;'>Success</td></tr><tr><td>&nbsp;</td></tr> <tr><td>&nbsp;</td></tr></table></div><table style='border: 1px solid #212121; margin-bottom: 1rem; width: 100%;'>");
         mailBody.AppendLine("<tr style='background-color: #212121; color: white;'><th >No.</th><th>Game</th><th>CD-Key</th><th>ราคา</th></tr>");  
 
-      if (ModelState.IsValid) {
-        List<Cart> carts = await _context.Cart.ToListAsync();
         
         int counter = 1;
         decimal allPrice = 0;
