@@ -1,3 +1,5 @@
+@model GameStore.Controllers.ManagementController.LoginModel
+
 @{
   ViewData["Title"] = "Login";
 }
@@ -9,25 +11,29 @@
 <div id="login">
   <h2>ผู้ดูแลระบบ</h2>
   <div class="login-form">
-    @*username*@
-    <div class="row">
-    <div class="col1-25">
-      <label for="user">ผู้ใช้</label>
-    </div>
-    <div class="col1-75">
-      <input class="input-box" type="text" id="login-name" placeholder="">
-    </div><br>
-    </div>
-    @*password*@
-    <div class="row">
-    <div class="col2-25">
-      <label for="password">รหัสผ่าน</label>
-    </div>
-    <div class="col2-75">
-      <input class="input-box" type="text" id="login-password" placeholder="">
-    </div>
-    </div>
-    <button class="login-btn" id="user-login">เข้าสู่ระบบ</button>
+    <form asp-action="Login">
+      @*username*@
+      <div class="row">
+        <div class="col1-25">
+          <label for="user">ผู้ใช้</label>
+        </div>
+        <div class="col1-75">
+          <input asp-for="User" class="input-box" type="text" id="login-name" placeholder="username">
+        </div><br>
+      </div>
+      
+      @*password*@
+      <div class="row">
+        <div class="col2-25">
+          <label for="password">รหัสผ่าน</label>
+        </div>
+        <div class="col2-75">
+          <input asp-for="Password" class="input-box" type="password" id="login-password" placeholder="password">
+        </div>
+      </div>
+
+      <button class="login-btn" id="user-login" type="submit">เข้าสู่ระบบ</button>
+
+    </form>
   </div>
-  
 </div>
