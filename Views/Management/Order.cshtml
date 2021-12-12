@@ -1,5 +1,6 @@
 @{
   ViewData["Title"] = "Order";
+  Dictionary<int, string> gameNameMap = new Dictionary<int, string>(){{1,"Call of Duty: Vanguard"},{2,"Minecraft"},{3,"World War Z"},{4,"Battlefield 2042"},{5,"PUBG"},{6,"Far Cry 6 Standard Edition"},{7,"Grand Theft Auto V"},{8,"Horizon Zero Dawn"},{9,"FIFA 22"},{10,"Resident Evil Village"},{11,"Dark Souls III"},{12,"Final Fantasy VII Remake"},{13,"Hitman 3"},{14,"Returnal"},{15,"Fall Guys"},{16,"Among Us"},{17,"The Last of Us Part II"},{18,"Marvel's Spider-Man"},{19,"Days Gone"},{20,"The Dark Pictures"},{21,"Call of Duty: Vanguard"},{22,"Call of Duty: Vanguard"}};
 }
 
 @section css {
@@ -40,7 +41,7 @@
     {
         <div class="container">
             <div class="game-name">
-                <p>Game ID: @item.Game_Id</p>
+                <p>@gameNameMap[@item.Game_Id] </p>
             </div>
             <div class="customer-name">
                 <p>@item.Name @item.LastName</p>
@@ -50,9 +51,9 @@
                 <p>@item.Email</p>
 
             </div>
-            <div class="customer-phonel">
+            <div class="customer-phone">
 
-                <p>@item.Phone</p>
+                <p>+66 @item.Phone</p>
 
             </div>
             <div class="quantity">

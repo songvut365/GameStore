@@ -117,14 +117,66 @@
         align-items: center;
         margin-bottom: 1rem;
         
+        
+        
     }
     
     #order .head-col p {
-        font-size: 0.8rem;
+        font-size: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
     }
     
     #order .container p {
         font-size: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    #order .game-name {
+        width: 20%;
+        
+    }
+    #order .customer-name {
+        width: 20%;
+    }
+    #order .customer-email {
+        width: 20%;
+    }
+    #order .customer-phone {
+        width: 20%;
+    }
+    #order .quantity {
+        width: 10%;
+    }
+    #order .sum-price {
+        width: 10%;
+    }
+
+    #order .head-col .game-name {
+        width: 20%;
+        
+    }
+    #order .head-col .customer-name {
+        width: 20%;
+    }
+    #order .head-col .customer-email {
+        width: 20%;
+    }
+    #order .head-col .customer-phone {
+        width: 20%;
+    }
+    #order .head-col .quantity {
+        width: 10%;
+    }
+    #order .head-col .sum-price {
+        width: 10%;
     }
 
     @media (max-width :800px){
