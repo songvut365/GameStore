@@ -52,9 +52,9 @@ console.log(data)
             
             for (i = 0; i <data.length; i++) { 
                 x += `
-            <div class="card">
+            <div class="card shadowBox">
                 <a href="/Store/Game?id=`+data[i].id+`">
-                <img src="/img/img_main/`+data[i].main_Image+`">
+                <img class="shadowBox" src="/img/img_main/`+data[i].main_Image+`">
                  </a>
                 <div class="card-context">
                     <h2 class="card-game-name">`+data[i].name+`</h2>
@@ -63,8 +63,6 @@ console.log(data)
                         <h3 class="price-discount">`+(data[i].price+350)+`</h3>
                         <h2 class="price-static">`+data[i].price+`</h2>
                     </div>
-                </div>
-                <div class="plat-card shadowBox">
                 </div>
             </div>
             `;
