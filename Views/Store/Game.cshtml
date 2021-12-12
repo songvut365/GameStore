@@ -12,9 +12,11 @@
   <h2 class="game-name">@Model.Name</h2>
   <div id="order">
     <div class="container">
+      
       <div class="game-teaser">
-        <iframe class="video-border" width="1000" height="500" src="@Model.Youtube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video-border" src="@Model.Youtube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+
       <div class="cover-box">
         <div class="cover">
           <img src="https://localhost:5001/img/img_main/@Model.Main_Image" alt="@Model.Main_Image" >
@@ -34,6 +36,7 @@
         <button class="cart-btn" id="addto-cart"> @Html.ActionLink("Add to cart", "AddToCart", "Cart", new {id = @Model.Id}, "")</button>
       </div>
     </div>
+
     <div class="game-img">
       <img class=frist-img src="https://localhost:5001/img/img_1/@Model.Image1" alt="@Model.Name" >
       <img class="second-img" src="https://localhost:5001/img/img_2/@Model.Image2" alt="@Model.Name" >
