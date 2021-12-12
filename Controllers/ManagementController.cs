@@ -27,9 +27,10 @@ namespace GameStore.Controllers
 
 
     //แสดงรายการสินค้าในสต๊อก GET: /Management/List
-    public IActionResult List()
+    public async Task<IActionResult> List()
     {
-      return View();
+        List<Game> gameList = await _context.Game.ToListAsync(); 
+        return View(gameList);
     }
 
     //แสดงรายการคำสั่งซื้อ GET: /Management/Order
@@ -39,7 +40,16 @@ namespace GameStore.Controllers
         return View(NewOrder);
     }
 
-
+    // POST: Game/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var game = await _context.Game.FindAsync(id);
+        _context.Game.Remove(game);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(List));
+    }
 
     //เพิ่มสินค้าในสต๊อก GET: /Management/Add/ 
     public IActionResult Add()
