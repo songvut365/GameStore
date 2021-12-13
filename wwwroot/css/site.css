@@ -211,6 +211,9 @@ img {
         width: 250px;
         border-radius: 6%;
     }
+    .card img:hover {
+        opacity:0.8;
+    }
 
  
 
