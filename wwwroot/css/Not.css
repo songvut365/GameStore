@@ -477,4 +477,7 @@
   #information .left-menu, #information .right-menu, 
   #information .accept-btn, #information .back-btn { width: 100%; }
   #information .back-btn { margin-top: 1rem; }
+  #information .credit-card, #information .information{
+    width: auto;
+  }
 }
